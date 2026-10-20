@@ -27,6 +27,23 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 a{color:inherit}
 :focus-visible{outline:1px solid var(--brass);outline-offset:4px}
 
+
+/* loader */
+.loader{position:fixed;inset:0;z-index:100;background:var(--forest);color:#ece6da;display:grid;place-items:center;text-align:center;transition:transform 1.1s cubic-bezier(.76,0,.24,1)}
+.loader.out{transform:translateY(-100%)}
+.loader .in{transition:opacity .5s,transform 1.1s cubic-bezier(.76,0,.24,1)}
+.loader.out .in{opacity:0;transform:translateY(40px)}
+.loader small{display:block;font:300 10px var(--sans);letter-spacing:.42em;text-transform:uppercase;color:var(--brass);opacity:0;animation:lfade 1s .2s forwards}
+.loader h2{font:400 clamp(38px,6vw,76px)/1 var(--serif);margin:22px 0 30px;letter-spacing:.02em}
+.loader h2 span{display:inline-block;opacity:0;transform:translateY(.35em);animation:lrise .9s cubic-bezier(.2,.7,.2,1) forwards}
+.loader h2 em{font-style:italic;color:var(--brass)}
+.loader .bar{width:min(220px,50vw);height:1px;margin:0 auto;background:rgba(236,230,218,.15);overflow:hidden}
+.loader .bar i{display:block;height:100%;width:100%;background:var(--brass);transform:scaleX(0);transform-origin:left;transition:transform .6s ease}
+@keyframes lfade{to{opacity:1}}
+@keyframes lrise{to{opacity:1;transform:none}}
+.js body:not(.ready) .hero img{animation-play-state:paused}
+.no-loader .loader{display:none}
+
 /* header */
 .top{position:fixed;inset:0 0 auto;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:22px var(--gut);color:#f6f1e7;transition:background .5s,color .5s,padding .5s}
 .top:not(.solid){text-shadow:0 1px 14px rgba(0,0,0,.55),0 0 2px rgba(0,0,0,.35)}
@@ -243,6 +260,36 @@ footer a{text-decoration:none;border-bottom:1px solid rgba(185,178,164,.4)}
 </head>
 <body>
 <script>document.documentElement.classList.add('js');document.body.classList.add('js')</script>
+<div class="loader" id="loader" aria-hidden="true"><div class="in">
+  <small>Plédéliac · Côtes-d'Armor</small>
+  <h2 id="ltitle">Le Chêne <em>au</em> Loup</h2>
+  <div class="bar"><i id="lbar"></i></div>
+</div></div>
+<script>
+(function(){
+  var d=document.documentElement,seen=false;
+  try{seen=sessionStorage.getItem('cal-seen')==='1'}catch(e){}
+  if(seen||matchMedia('(prefers-reduced-motion: reduce)').matches){d.classList.add('no-loader');document.body.classList.add('ready');return}
+  try{sessionStorage.setItem('cal-seen','1')}catch(e){}
+  var h=document.getElementById('ltitle'),out='',n=0;
+  h.childNodes.forEach(function(nd){
+    var txt=nd.textContent,wrap=nd.nodeType===1;
+    var s=txt.split('').map(function(c){var x=c===' '?'&nbsp;':c;return '<span style="animation-delay:'+(0.35+0.045*(n++))+'s">'+x+'</span>'}).join('');
+    out+=wrap?'<em>'+s+'</em>':s});
+  h.innerHTML=out;
+  document.body.style.overflow='hidden';
+  var bar=document.getElementById('lbar'),t0=Date.now(),done=false,steps=0,total=2;
+  function prog(){steps++;bar.style.transform='scaleX('+Math.min(1,steps/total)+')';if(steps>=total)finish()}
+  function finish(){if(done)return;done=true;var wait=Math.max(0,2000-(Date.now()-t0));
+    setTimeout(function(){bar.style.transform='scaleX(1)';setTimeout(function(){
+      var l=document.getElementById('loader');l.classList.add('out');document.body.classList.add('ready');document.body.style.overflow='';
+      setTimeout(function(){l.remove()},1200)},350)},wait)}
+  bar.style.transform='scaleX(.12)';
+  var img=new Image();img.onload=img.onerror=prog;img.src='images/b6803e8219e9.jpg';
+  (document.fonts?document.fonts.ready:Promise.resolve()).then(prog);
+  setTimeout(finish,5000);
+})();
+</script>
 
 <header class="top" id="top">
   <a class="mark" href="#accueil">Le Chêne au Loup</a>
