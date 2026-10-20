@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Le Chêne au Loup · Domaine à louer</title>
-<meta name="description" content="Le Chêne au Loup, demeure de pierre au cœur d'un parc boisé. Domaine à louer pour séjours, réceptions et prises de vue.">
+<meta name="description" content="Le Chêne au Loup, à Plédéliac : demeure bâtie avec des pierres du château de la Hunaudaye, au cœur d'un parc boisé. Domaine à louer pour séjours, réceptions et prises de vue.">
 <meta property="og:title" content="Le Chêne au Loup">
 <meta property="og:description" content="Demeure de pierre au cœur d'un parc boisé. Domaine à louer.">
 <meta property="og:image" content="images/b6803e8219e9-thumb.jpg">
@@ -109,6 +109,25 @@ a{color:inherit}
 .bed-imgs img{width:100%;aspect-ratio:3/2;object-fit:cover}
 .bed-imgs .ph:not(.main) img{aspect-ratio:4/3}
 
+
+/* histoire */
+.story{background:var(--forest);color:#ece6da;padding:clamp(80px,12vw,180px) var(--gut);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(30px,7vw,120px);align-items:center}
+.story .eyebrow{color:var(--brass)}
+.story h2{font:400 clamp(40px,5.6vw,84px)/1 var(--serif);margin:0 0 34px}
+.story h2 em{color:var(--brass)}
+.story p{color:#c9c2b4;margin:0 0 20px;max-width:560px}
+.story p.first{font:400 clamp(21px,1.9vw,27px)/1.45 var(--serif);color:#ece6da}
+.story .note{font-size:13px;color:#8f897d;border-top:1px solid rgba(236,230,218,.18);padding-top:18px;margin-top:30px}
+.story-imgs{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap);align-items:end}
+.story-imgs .ph img{width:100%;object-fit:cover}
+.story-imgs .ph:first-child img{aspect-ratio:2/3}
+.story-imgs .ph:last-child img{aspect-ratio:3/4}
+.story-imgs .ph:last-child{margin-bottom:18%}
+.dist{display:flex;gap:18px;align-items:baseline;margin:34px 0 0}
+.dist b{font:italic 400 clamp(54px,6vw,84px)/1 var(--serif);color:var(--brass);font-weight:400}
+.dist span{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#b9b2a4;max-width:220px;line-height:1.6}
+@media (max-width:900px){.story{grid-template-columns:1fr}}
+
 /* facts */
 .facts{padding:clamp(70px,11vw,160px) var(--gut);display:grid;grid-template-columns:1fr 1.6fr;gap:clamp(30px,6vw,100px)}
 .facts h2{font:400 clamp(38px,5vw,72px)/1 var(--serif);margin:0}
@@ -201,6 +220,7 @@ footer a{text-decoration:none;border-bottom:1px solid rgba(185,178,164,.4)}
 <header class="top" id="top">
   <a class="mark" href="#accueil">Le Chêne au Loup</a>
   <nav id="nav" aria-label="Sections">
+    <a href="#histoire">Histoire</a>
     <a href="#parc">Le parc</a>
     <a href="#demeure">La demeure</a>
     <a href="#chambres">Les chambres</a>
@@ -216,7 +236,7 @@ footer a{text-decoration:none;border-bottom:1px solid rgba(185,178,164,.4)}
   <img src="images/b6803e8219e9.jpg" alt="La façade de pierre du Chêne au Loup au bout de son allée" fetchpriority="high">
   <div class="hero-text">
     <div>
-      <p class="eyebrow">Domaine à louer</p>
+      <p class="eyebrow">Domaine à louer · Plédéliac, Côtes-d'Armor</p>
       <h1>Le Chêne<br><em>au</em>Loup</h1>
     </div>
     <p class="tag">Une demeure de pierre, son parc, ses dépendances. Rien autour que les arbres.</p>
@@ -227,11 +247,25 @@ footer a{text-decoration:none;border-bottom:1px solid rgba(185,178,164,.4)}
 <section class="prologue">
   <div class="words reveal">
     <p class="drop">On y arrive par une allée sous les grands arbres. Au bout, la maison.</p>
-    <p>Pierre blonde, toiture d'ardoise, lucarnes alignées et jardin dessiné. Le Chêne au Loup est une demeure de caractère, entourée d'un parc boisé qui la tient à l'écart de tout.</p>
+    <p>Pierre blonde, toiture d'ardoise, lucarnes alignées et jardin dessiné, à deux pas des ruines du château de la Hunaudaye. Le Chêne au Loup est une demeure de caractère, entourée d'un parc boisé qui la tient à l'écart de tout.</p>
     <p>Le domaine se loue en entier : la demeure et ses pièces de réception, quatre chambres, une extension contemporaine, les dépendances et le parc.</p>
     <p class="sig">Bienvenue au domaine.</p>
   </div>
   <div class="reveal"><figure class="ph tall"><button type="button" data-i="10" aria-label="Agrandir : Le parc"><img src="images/680174a4c885-thumb.jpg" srcset="images/680174a4c885-thumb.jpg 1000w, images/680174a4c885.jpg 2400w" sizes="(max-width: 760px) 100vw, 45vw" width="2400" height="1350" alt="Le parc, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure></div>
+</section>
+
+
+<section class="story" id="histoire">
+  <div class="reveal">
+    <p class="eyebrow">Histoire</p>
+    <h2>Les pierres de<br><em>la Hunaudaye</em></h2>
+    <p class="first">À quelques centaines de mètres derrière la maison se dressent les ruines du château de la Hunaudaye, forteresse médiévale des seigneurs de Tournemine.</p>
+    <p>En 1793, en pleine Révolution, le château est incendié par des révolutionnaires venus de Lamballe. Il servira ensuite de carrière de pierres pendant plus d'un siècle.</p>
+    <p>Selon l'histoire transmise avec la maison, c'est le propriétaire du château qui fit alors bâtir le Chêne au Loup, en réemployant une partie de ses pierres. Les murs de la demeure portent ainsi un peu de la Hunaudaye.</p>
+    <p>Plusieurs familles s'y sont succédé depuis. La maison est aujourd'hui dans la même famille depuis deux générations, qui l'ouvre désormais à la location.</p>
+    <div class="dist"><b>300 m</b><span>entre la maison et les ruines du château</span></div>
+  </div>
+  <div class="story-imgs reveal"><figure class="ph "><button type="button" data-i="16" aria-label="Agrandir : Le parc"><img src="images/79fc7507bcbb-thumb.jpg" srcset="images/79fc7507bcbb-thumb.jpg 1000w, images/79fc7507bcbb.jpg 1600w" sizes="(max-width: 900px) 50vw, 25vw" width="1600" height="2400" alt="Le parc, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure><figure class="ph "><button type="button" data-i="60" aria-label="Agrandir : L&#x27;extension"><img src="images/d93e28034c6e-thumb.jpg" srcset="images/d93e28034c6e-thumb.jpg 1000w, images/d93e28034c6e.jpg 2400w" sizes="(max-width: 900px) 50vw, 25vw" width="2400" height="1600" alt="L&#x27;extension, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure></div>
 </section>
 
 <section class="chapter " id="parc"><header class="ch-head reveal"><span class="num">I</span><h2>Le parc</h2><p class="lead">Une allée sous les grands arbres, puis la maison de pierre au bout. Le domaine s'étend autour d'elle, entre jardins dessinés et bois.</p></header><div class="row wide"><figure class="ph "><button type="button" data-i="0" aria-label="Agrandir : Le parc"><img src="images/8b84a14d20aa-thumb.jpg" srcset="images/8b84a14d20aa-thumb.jpg 1000w, images/8b84a14d20aa.jpg 2400w" sizes="100vw" width="2400" height="1500" alt="Le parc, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure></div><article class="room reveal"><header class="room-head"><h3>Les jardins</h3><p>Pelouses tondues, haies de charmille, buis taillés en boule et massifs d'hortensias. Devant la maison, la terrasse de gravier accueille une grande table à l'ombre du parasol.</p></header><div class="row pair "><figure class="ph "><button type="button" data-i="1" aria-label="Agrandir : Le parc"><img src="images/d557c4e57eb2-thumb.jpg" srcset="images/d557c4e57eb2-thumb.jpg 1000w, images/d557c4e57eb2.jpg 2400w" sizes="(max-width: 760px) 100vw, 50vw" width="2400" height="1600" alt="Le parc, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure><figure class="ph "><button type="button" data-i="12" aria-label="Agrandir : Le parc"><img src="images/5d3dbc7675f9-thumb.jpg" srcset="images/5d3dbc7675f9-thumb.jpg 1000w, images/5d3dbc7675f9.jpg 2400w" sizes="(max-width: 760px) 100vw, 50vw" width="2400" height="1350" alt="Le parc, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure></div><div class="row trio"><figure class="ph "><button type="button" data-i="6" aria-label="Agrandir : Le parc"><img src="images/0136cdef3f2c-thumb.jpg" srcset="images/0136cdef3f2c-thumb.jpg 1000w, images/0136cdef3f2c.jpg 2400w" sizes="(max-width: 760px) 100vw, 33vw" width="2400" height="1350" alt="Le parc, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure><figure class="ph "><button type="button" data-i="14" aria-label="Agrandir : Le parc"><img src="images/c92b30711d01-thumb.jpg" srcset="images/c92b30711d01-thumb.jpg 1000w, images/c92b30711d01.jpg 2400w" sizes="(max-width: 760px) 100vw, 33vw" width="2400" height="1350" alt="Le parc, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure><figure class="ph "><button type="button" data-i="13" aria-label="Agrandir : Le parc"><img src="images/82cc8e20f850-thumb.jpg" srcset="images/82cc8e20f850-thumb.jpg 1000w, images/82cc8e20f850.jpg 2400w" sizes="(max-width: 760px) 100vw, 33vw" width="2400" height="1350" alt="Le parc, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure></div></article><article class="room reveal"><header class="room-head"><h3>Les dépendances</h3><p>Autour de la demeure, plusieurs bâtiments de pierre prolongent le domaine : longères, grange à large porte de bois, et une aile neuve en bardage clair.</p></header><div class="row pair "><figure class="ph "><button type="button" data-i="7" aria-label="Agrandir : Le parc"><img src="images/115d51fc5cbb-thumb.jpg" srcset="images/115d51fc5cbb-thumb.jpg 1000w, images/115d51fc5cbb.jpg 2400w" sizes="(max-width: 760px) 100vw, 50vw" width="2400" height="1350" alt="Le parc, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure><figure class="ph "><button type="button" data-i="8" aria-label="Agrandir : Le parc"><img src="images/63a4d8c4ee7f-thumb.jpg" srcset="images/63a4d8c4ee7f-thumb.jpg 1000w, images/63a4d8c4ee7f.jpg 2400w" sizes="(max-width: 760px) 100vw, 50vw" width="2400" height="1600" alt="Le parc, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure></div><div class="row pair "><figure class="ph "><button type="button" data-i="9" aria-label="Agrandir : Le parc"><img src="images/db1a1df4f48f-thumb.jpg" srcset="images/db1a1df4f48f-thumb.jpg 1000w, images/db1a1df4f48f.jpg 2400w" sizes="(max-width: 760px) 100vw, 50vw" width="2400" height="1350" alt="Le parc, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure><figure class="ph "><button type="button" data-i="15" aria-label="Agrandir : Le parc"><img src="images/24c308896ffe-thumb.jpg" srcset="images/24c308896ffe-thumb.jpg 1000w, images/24c308896ffe.jpg 2400w" sizes="(max-width: 760px) 100vw, 50vw" width="2400" height="1350" alt="Le parc, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure></div></article><div class="row offset l"><figure class="ph "><button type="button" data-i="4" aria-label="Agrandir : Le parc"><img src="images/ad5bf4ee9795-thumb.jpg" srcset="images/ad5bf4ee9795-thumb.jpg 1000w, images/ad5bf4ee9795.jpg 2400w" sizes="(max-width: 760px) 100vw, 66vw" width="2400" height="1350" alt="Le parc, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure></div></section>
@@ -246,7 +280,7 @@ footer a{text-decoration:none;border-bottom:1px solid rgba(185,178,164,.4)}
 
 <section class="facts" id="domaine">
   <h2 class="reveal">Le domaine<br><em>en bref</em></h2>
-  <dl class="reveal"><div><dt>La demeure</dt><dd>Maison de maître en pierre, toiture d'ardoise à lucarnes</dd></div><div><dt>Réception</dt><dd>Salon, salle à manger avec cheminée, cuisine équipée</dd></div><div><dt>Couchage</dt><dd>Quatre chambres dans la demeure, un espace nuit sous les toits de l'extension</dd></div><div><dt>L'extension</dt><dd>Séjour contemporain, bureau ouvert sur le parc</dd></div><div><dt>Extérieurs</dt><dd>Parc arboré, jardins, terrasse, dépendances en pierre, grange</dd></div></dl>
+  <dl class="reveal"><div><dt>La demeure</dt><dd>Maison de maître en pierre, toiture d'ardoise à lucarnes</dd></div><div><dt>Histoire</dt><dd>Bâtie en partie avec des pierres du château de la Hunaudaye, à 300 m</dd></div><div><dt>Réception</dt><dd>Salon, salle à manger avec cheminée, cuisine équipée</dd></div><div><dt>Couchage</dt><dd>Quatre chambres dans la demeure, un espace nuit sous les toits de l'extension</dd></div><div><dt>L'extension</dt><dd>Séjour contemporain, bureau ouvert sur le parc</dd></div><div><dt>Extérieurs</dt><dd>Parc arboré, jardins, terrasse, dépendances en pierre, grange</dd></div></dl>
 </section>
 
 <section class="stay" id="sejourner">
@@ -269,7 +303,7 @@ footer a{text-decoration:none;border-bottom:1px solid rgba(185,178,164,.4)}
 </main>
 
 <footer>
-  <div><div class="mark">Le Chêne au Loup</div><p>Domaine à louer</p></div>
+  <div><div class="mark">Le Chêne au Loup</div><p>Domaine à louer · Plédéliac, Côtes-d'Armor</p></div>
   <div><a href="mailto:contact@exemple.fr">contact@exemple.fr</a></div>
 </footer>
 
