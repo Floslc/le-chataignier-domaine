@@ -29,6 +29,8 @@ a{color:inherit}
 
 /* header */
 .top{position:fixed;inset:0 0 auto;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:22px var(--gut);color:#f6f1e7;transition:background .5s,color .5s,padding .5s}
+.top:not(.solid){text-shadow:0 1px 14px rgba(0,0,0,.55),0 0 2px rgba(0,0,0,.35)}
+.top:not(.solid)::before{content:"";position:absolute;inset:0 0 -40px;z-index:-1;background:linear-gradient(180deg,rgba(10,14,10,.5),rgba(10,14,10,0));pointer-events:none}
 .top.solid{background:rgba(243,239,231,.94);backdrop-filter:blur(8px);color:var(--ink);padding:14px var(--gut);border-bottom:1px solid var(--line)}
 .mark{font:500 22px/1 var(--serif);letter-spacing:.04em;text-decoration:none}
 .top nav{display:flex;gap:clamp(16px,2.6vw,38px)}
