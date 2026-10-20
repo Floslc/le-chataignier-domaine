@@ -213,8 +213,8 @@ footer a{text-decoration:none;border-bottom:1px solid rgba(185,178,164,.4)}
 /* lightbox */
 .lb{position:fixed;inset:0;z-index:50;background:#0e110e;color:#ece6da;display:none;grid-template-rows:1fr auto;padding:56px clamp(10px,5vw,80px) 18px}
 .lb.open{display:grid}
-.lb figure{margin:0;display:grid;place-items:center;min-height:0}
-.lb img{max-width:100%;max-height:100%;object-fit:contain;width:auto;height:auto}
+.lb figure{margin:0;position:relative;min-height:0;min-width:0}
+.lb img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:contain}
 .lb .bar{display:flex;justify-content:space-between;align-items:center;padding-top:14px;font-size:12px;letter-spacing:.22em;text-transform:uppercase}
 .lb .bar span:first-child{font:italic 400 20px var(--serif);letter-spacing:0;text-transform:none}
 .lb-close{position:absolute;top:14px;right:clamp(14px,3vw,30px);font-size:12px;letter-spacing:.24em;text-transform:uppercase}
@@ -428,9 +428,9 @@ $('#show-all').onclick=e=>{const g=$('#all');g.hidden=!g.hidden;e.target.setAttr
 const lb=$('#lb'),img=$('#lb-img');let cur=0,last=null;
 function show(i){cur=(i+P.length)%P.length;const p=P[cur];img.src=p.s;img.alt=p.l;$('#lb-cap').textContent=p.l;$('#lb-count').textContent=(cur+1)+' / '+P.length;
   [cur+1,cur-1].forEach(j=>{const n=P[(j+P.length)%P.length];new Image().src=n.s})}
-function open(i){last=document.activeElement;show(i);lb.classList.add('open');document.body.style.overflow='hidden';$('#lb-close').focus()}
+function openLb(i){last=document.activeElement;show(i);lb.classList.add('open');document.body.style.overflow='hidden';$('#lb-close').focus()}
 function close(){lb.classList.remove('open');document.body.style.overflow='';last&&last.focus()}
-document.addEventListener('click',e=>{const b=e.target.closest('[data-i]');if(b)open(+b.dataset.i)});
+document.addEventListener('click',e=>{const b=e.target.closest('[data-i]');if(b)openLb(+b.dataset.i)});
 $('#lb-close').onclick=close;$('#lb-prev').onclick=()=>show(cur-1);$('#lb-next').onclick=()=>show(cur+1);
 document.addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1)});
 let sx=null;lb.addEventListener('touchstart',e=>sx=e.touches[0].clientX,{passive:true});
