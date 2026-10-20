@@ -174,6 +174,16 @@ a{color:inherit}
 @media (max-width:1100px){.trail{display:none}}
 @media (max-width:760px){.timeline li{grid-template-columns:1fr;gap:4px}}
 
+
+/* menu mobile */
+.mnav{position:fixed;inset:0;z-index:19;background:var(--paper);color:var(--ink);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:clamp(18px,4vh,30px);padding:90px 24px 40px;opacity:0;visibility:hidden;transition:opacity .35s ease,visibility 0s linear .35s}
+.mnav.open{opacity:1;visibility:visible;transition:opacity .35s ease}
+.mnav a{font:400 clamp(28px,8vw,36px)/1.1 var(--serif);text-decoration:none}
+.mnav a.res{margin-top:14px;font:400 12px var(--sans);letter-spacing:.24em;text-transform:uppercase;border:1px solid currentColor;padding:14px 26px}
+@media (min-width:901px){.mnav{display:none}}
+section[id]{scroll-margin-top:64px}
+@media (max-width:900px){section[id]{scroll-margin-top:50px}}
+
 /* facts */
 .facts{padding:clamp(70px,11vw,160px) var(--gut);display:grid;grid-template-columns:1fr 1.6fr;gap:clamp(30px,6vw,100px)}
 .facts h2{font:400 clamp(38px,5vw,72px)/1 var(--serif);margin:0}
@@ -235,8 +245,6 @@ footer a{text-decoration:none;border-bottom:1px solid rgba(185,178,164,.4)}
 /* mobile */
 @media (max-width:900px){
   .top nav{display:none}
-  .top nav.show{display:flex;position:fixed;inset:0;background:var(--paper);color:var(--ink);flex-direction:column;justify-content:center;align-items:center;gap:30px;z-index:-1}
-  .top nav.show a{font:400 34px var(--serif);letter-spacing:0;text-transform:none}
   .menu-btn{display:block}
   .top .cta{display:none}
   .prologue{grid-template-columns:1fr}
@@ -308,7 +316,7 @@ footer a{text-decoration:none;border-bottom:1px solid rgba(185,178,164,.4)}
     <a href="#sejourner">Séjourner</a>
   </nav>
   <a class="cta" href="#sejourner">Réserver</a>
-  <button class="menu-btn" id="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+  <button class="menu-btn" id="menu" aria-expanded="false" aria-controls="mnav">Menu</button>
 </header>
 
 <ol class="trail" id="trail" aria-label="Fil de la visite">
@@ -320,6 +328,9 @@ footer a{text-decoration:none;border-bottom:1px solid rgba(185,178,164,.4)}
   <li><a href="#grange"><span>Les communs</span><i></i></a></li>
   <li><a href="#sejourner"><span>Séjourner</span><i></i></a></li>
 </ol>
+<nav class="mnav" id="mnav" aria-label="Menu">
+  <a href="#histoire">Histoire</a><a href="#parc">Le parc</a><a href="#demeure">La demeure</a><a href="#chambres">Les chambres</a><a href="#extension">L'extension</a><a href="#grange">Les communs</a><a href="#photos">Photographies</a><a class="res" href="#sejourner">Réserver</a>
+</nav>
 <main>
 <section class="hero" id="accueil">
   <img src="images/b6803e8219e9.jpg" alt="La façade de pierre du Chêne au Loup au bout de son allée" fetchpriority="high">
@@ -417,12 +428,15 @@ footer a{text-decoration:none;border-bottom:1px solid rgba(185,178,164,.4)}
 const P=[{"s": "images/8b84a14d20aa.jpg", "l": "Le parc", "w": 2400, "h": 1500}, {"s": "images/d557c4e57eb2.jpg", "l": "Le parc", "w": 2400, "h": 1600}, {"s": "images/20176e24f855.jpg", "l": "Le parc", "w": 2400, "h": 1500}, {"s": "images/b6803e8219e9.jpg", "l": "Le parc", "w": 2400, "h": 1600}, {"s": "images/ad5bf4ee9795.jpg", "l": "Le parc", "w": 2400, "h": 1350}, {"s": "images/c6183ab28c90.jpg", "l": "Le parc", "w": 2400, "h": 1350}, {"s": "images/0136cdef3f2c.jpg", "l": "Le parc", "w": 2400, "h": 1350}, {"s": "images/115d51fc5cbb.jpg", "l": "Le parc", "w": 2400, "h": 1350}, {"s": "images/63a4d8c4ee7f.jpg", "l": "Le parc", "w": 2400, "h": 1600}, {"s": "images/db1a1df4f48f.jpg", "l": "Le parc", "w": 2400, "h": 1350}, {"s": "images/680174a4c885.jpg", "l": "Le parc", "w": 2400, "h": 1350}, {"s": "images/bf2f64fe34eb.jpg", "l": "Le parc", "w": 2400, "h": 1350}, {"s": "images/5d3dbc7675f9.jpg", "l": "Le parc", "w": 2400, "h": 1350}, {"s": "images/82cc8e20f850.jpg", "l": "Le parc", "w": 2400, "h": 1350}, {"s": "images/c92b30711d01.jpg", "l": "Le parc", "w": 2400, "h": 1350}, {"s": "images/24c308896ffe.jpg", "l": "Le parc", "w": 2400, "h": 1350}, {"s": "images/79fc7507bcbb.jpg", "l": "Le parc", "w": 1600, "h": 2400}, {"s": "images/4e4ff155d158.jpg", "l": "Le salon", "w": 2400, "h": 1350}, {"s": "images/3899681965e1.jpg", "l": "Le salon", "w": 2400, "h": 1350}, {"s": "images/bd9d1640f019.jpg", "l": "Le salon", "w": 2400, "h": 1600}, {"s": "images/4ca2b22b631c.jpg", "l": "La salle à manger", "w": 2400, "h": 1350}, {"s": "images/01982584faec.jpg", "l": "La salle à manger", "w": 2400, "h": 1350}, {"s": "images/edbc6fd6c293.jpg", "l": "La salle à manger", "w": 2400, "h": 1350}, {"s": "images/1720441d30c7.jpg", "l": "La salle à manger", "w": 2400, "h": 1350}, {"s": "images/eab8fc6ec677.jpg", "l": "La salle à manger", "w": 2400, "h": 1350}, {"s": "images/b08fd1741734.jpg", "l": "La salle à manger", "w": 2400, "h": 1350}, {"s": "images/dcc6e96a1e6e.jpg", "l": "La cuisine", "w": 2400, "h": 1350}, {"s": "images/429916713f80.jpg", "l": "La cuisine", "w": 2400, "h": 1350}, {"s": "images/6b6300c10ece.jpg", "l": "La cuisine", "w": 2400, "h": 1350}, {"s": "images/7eda3bcae952.jpg", "l": "La cuisine", "w": 2400, "h": 1350}, {"s": "images/2fa8bf5c74dc.jpg", "l": "La cuisine", "w": 2400, "h": 1350}, {"s": "images/c0d282e9a018.jpg", "l": "La cuisine", "w": 2400, "h": 1350}, {"s": "images/29811f6d2a77.jpg", "l": "La cuisine", "w": 2400, "h": 1350}, {"s": "images/797d4b07cb94.jpg", "l": "L'escalier", "w": 1600, "h": 2400}, {"s": "images/b96b032f3b96.jpg", "l": "L'escalier", "w": 2400, "h": 1350}, {"s": "images/0859e8738048.jpg", "l": "L'escalier", "w": 1600, "h": 2400}, {"s": "images/1bc7b5618304.jpg", "l": "Chambre une", "w": 2400, "h": 1600}, {"s": "images/74255434ee3f.jpg", "l": "Chambre une", "w": 2400, "h": 1350}, {"s": "images/ab4cf3fc7af2.jpg", "l": "Chambre une", "w": 1600, "h": 2400}, {"s": "images/888aac225a52.jpg", "l": "Chambre une", "w": 1350, "h": 2400}, {"s": "images/44c76f40a516.jpg", "l": "Chambre une", "w": 1600, "h": 2400}, {"s": "images/83697f0d7531.jpg", "l": "Chambre une", "w": 2400, "h": 1600}, {"s": "images/2c2256e08d5b.jpg", "l": "Chambre une", "w": 2400, "h": 1600}, {"s": "images/7d38c2af006e.jpg", "l": "Chambre deux", "w": 2400, "h": 1600}, {"s": "images/e404800ee9be.jpg", "l": "Chambre deux", "w": 2400, "h": 1600}, {"s": "images/9b0ee078e867.jpg", "l": "Chambre deux", "w": 2400, "h": 1600}, {"s": "images/a28e03cc8509.jpg", "l": "Chambre trois", "w": 2400, "h": 1350}, {"s": "images/8fa14ffbc769.jpg", "l": "Chambre trois", "w": 2400, "h": 1500}, {"s": "images/6ed1c3db670d.jpg", "l": "Chambre trois", "w": 2400, "h": 1350}, {"s": "images/10dde5bd467a.jpg", "l": "Chambre trois", "w": 2400, "h": 1500}, {"s": "images/5255a729b1c9.jpg", "l": "Chambre quatre", "w": 2400, "h": 1600}, {"s": "images/1c7ff485215e.jpg", "l": "Chambre quatre", "w": 2400, "h": 1600}, {"s": "images/eae1a90e355e.jpg", "l": "Chambre quatre", "w": 2400, "h": 1600}, {"s": "images/31bb3bbb2201.jpg", "l": "Chambre quatre", "w": 2400, "h": 1600}, {"s": "images/51bd8c8b8e60.jpg", "l": "Salle de bains", "w": 1600, "h": 2400}, {"s": "images/66dadc0e2fad.jpg", "l": "Salle de bains", "w": 1600, "h": 2400}, {"s": "images/5f0a5fbe6c64.jpg", "l": "Salle de bains", "w": 1600, "h": 2400}, {"s": "images/38da5a3d0eb4.jpg", "l": "Salle de bains", "w": 1600, "h": 2400}, {"s": "images/ac83f05c2a7d.jpg", "l": "L'extension", "w": 2400, "h": 1600}, {"s": "images/811486cedcf4.jpg", "l": "L'extension", "w": 2400, "h": 1600}, {"s": "images/d93e28034c6e.jpg", "l": "L'extension", "w": 2400, "h": 1600}, {"s": "images/bde5f13101b6.jpg", "l": "L'extension", "w": 2400, "h": 1350}, {"s": "images/be6aae535639.jpg", "l": "L'extension", "w": 2400, "h": 1350}, {"s": "images/23efafa27b4e.jpg", "l": "L'extension", "w": 2400, "h": 1350}, {"s": "images/9ac72ed74967.jpg", "l": "L'extension", "w": 2400, "h": 1600}, {"s": "images/25b95ed8ef1d.jpg", "l": "L'extension", "w": 2400, "h": 1500}, {"s": "images/40af2d0bd7db.jpg", "l": "L'extension", "w": 2400, "h": 1350}, {"s": "images/761988eecf25.jpg", "l": "L'extension", "w": 2400, "h": 1500}, {"s": "images/fc50fd5cd6c7.jpg", "l": "L'extension", "w": 2400, "h": 1350}, {"s": "images/c11163416c43.jpg", "l": "La grange", "w": 2400, "h": 1350}, {"s": "images/7734ea7d5773.jpg", "l": "La grange", "w": 2400, "h": 1350}];
 const $=s=>document.querySelector(s);
 const top_=$('#top'),hero=$('#accueil');
-const onScroll=()=>top_.classList.toggle('solid',scrollY>hero.offsetHeight-90);
+const onScroll=()=>top_.classList.toggle('solid',top_.classList.contains('menu-open')||scrollY>hero.offsetHeight-90);
 addEventListener('scroll',onScroll,{passive:true});onScroll();
 
-const nav=$('#nav'),menu=$('#menu');
-menu.onclick=()=>{const o=nav.classList.toggle('show');menu.setAttribute('aria-expanded',o);menu.textContent=o?'Fermer':'Menu';top_.classList.toggle('solid',o||scrollY>hero.offsetHeight-90)};
-nav.querySelectorAll('a').forEach(a=>a.onclick=()=>{if(nav.classList.contains('show'))menu.click()});
+const mnav=$('#mnav'),menu=$('#menu');let mOpen=false;
+function setMenu(o){mOpen=o;mnav.classList.toggle('open',o);menu.setAttribute('aria-expanded',o);menu.textContent=o?'Fermer':'Menu';document.body.style.overflow=o?'hidden':'';top_.classList.toggle('menu-open',o);onScroll()}
+menu.onclick=()=>setMenu(!mOpen);
+mnav.querySelectorAll('a').forEach(a=>a.onclick=e=>{e.preventDefault();const tg=$(a.getAttribute('href'));setMenu(false);requestAnimationFrame(()=>tg.scrollIntoView({behavior:'smooth'}))});
+addEventListener('keydown',e=>{if(e.key==='Escape'&&mOpen)setMenu(false)});
+addEventListener('resize',()=>{if(mOpen&&innerWidth>900)setMenu(false)});
 
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
