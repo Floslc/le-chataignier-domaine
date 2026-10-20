@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Le Chêne au Loup · Domaine à louer</title>
+<meta name="description" content="Le Chêne au Loup, demeure de pierre au cœur d'un parc boisé. Domaine à louer pour séjours, réceptions et prises de vue.">
+<meta property="og:title" content="Le Chêne au Loup">
+<meta property="og:description" content="Demeure de pierre au cœur d'un parc boisé. Domaine à louer.">
+<meta property="og:image" content="images/b6803e8219e9-thumb.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="images/b6803e8219e9.jpg">
+<style>
+:root{
+  --paper:#f3efe7; --stone:#e6dfd2; --ink:#1d1b17; --muted:#6c665c;
+  --forest:#18211b; --forest-2:#222d25; --brass:#a88a5c; --line:rgba(29,27,23,.16);
+  --serif:"Cormorant Garamond",Georgia,serif; --sans:"Jost",system-ui,sans-serif;
+  --gut:clamp(16px,4vw,56px); --gap:clamp(10px,1.4vw,20px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:300 17px/1.7 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+a{color:inherit}
+:focus-visible{outline:1px solid var(--brass);outline-offset:4px}
+
+/* header */
+.top{position:fixed;inset:0 0 auto;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:22px var(--gut);color:#f6f1e7;transition:background .5s,color .5s,padding .5s}
+.top.solid{background:rgba(243,239,231,.94);backdrop-filter:blur(8px);color:var(--ink);padding:14px var(--gut);border-bottom:1px solid var(--line)}
+.mark{font:500 22px/1 var(--serif);letter-spacing:.04em;text-decoration:none}
+.top nav{display:flex;gap:clamp(16px,2.6vw,38px)}
+.top nav a{font-size:12px;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;opacity:.85}
+.top nav a:hover{opacity:1}
+.top .cta{border:1px solid currentColor;padding:9px 16px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;text-decoration:none}
+.menu-btn{display:none;font-size:11px;letter-spacing:.22em;text-transform:uppercase}
+
+/* hero */
+.hero{position:relative;height:100svh;min-height:560px;color:#f6f1e7;overflow:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.06);animation:settle 2.6s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes settle{to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,14,10,.45) 0%,rgba(10,14,10,0) 30%,rgba(10,14,10,0) 50%,rgba(10,14,10,.62) 100%)}
+.hero-text{position:absolute;z-index:2;left:var(--gut);right:var(--gut);bottom:clamp(40px,9vh,96px);display:flex;align-items:flex-end;justify-content:space-between;gap:30px;flex-wrap:wrap}
+.eyebrow{font-size:12px;letter-spacing:.32em;text-transform:uppercase;margin:0 0 14px}
+.hero h1{font:400 clamp(54px,10.5vw,168px)/.9 var(--serif);margin:0;letter-spacing:-.01em}
+.hero h1 em{font-style:italic;font-size:.62em;display:inline-block;margin:0 .08em;vertical-align:.12em}
+.hero .tag{max-width:300px;font:italic 400 clamp(20px,2vw,26px)/1.35 var(--serif);margin:0}
+.scroll{position:absolute;z-index:2;left:50%;bottom:22px;transform:translateX(-50%);width:1px;height:46px;background:rgba(246,241,231,.35);overflow:hidden}
+.scroll::after{content:"";position:absolute;left:0;top:-46px;width:1px;height:46px;background:#f6f1e7;animation:drip 2.4s ease-in-out infinite}
+@keyframes drip{to{top:46px}}
+
+/* prologue */
+.prologue{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,110px);align-items:center;padding:clamp(80px,13vw,190px) var(--gut)}
+.prologue .words{max-width:520px;justify-self:end}
+.prologue .drop{font:400 clamp(30px,3.4vw,48px)/1.2 var(--serif);margin:0 0 30px}
+.prologue p{margin:0 0 18px;color:#3e3a33}
+.sig{font:italic 400 20px var(--serif);color:var(--muted)}
+.ph.tall img{aspect-ratio:4/5;object-fit:cover;width:100%}
+
+/* chapters */
+.chapter{padding:clamp(60px,10vw,150px) var(--gut)}
+.chapter.dark{background:var(--forest);color:#ece6da}
+.chapter.dark .room-head p,.chapter.dark .lead{color:#b9b2a4}
+.chapter.stone{background:var(--stone)}
+.ch-head{display:grid;grid-template-columns:auto 1fr;column-gap:clamp(20px,4vw,60px);align-items:end;margin-bottom:clamp(50px,8vw,110px);max-width:1180px}
+.num{font:italic 400 clamp(70px,10vw,150px)/.8 var(--serif);color:var(--brass);grid-row:span 2}
+.ch-head h2{font:400 clamp(40px,6vw,92px)/1 var(--serif);margin:0;letter-spacing:-.01em}
+.lead{font:400 clamp(19px,1.6vw,23px)/1.5 var(--serif);max-width:640px;margin:16px 0 0;color:var(--muted)}
+
+.room{margin:clamp(60px,9vw,130px) 0 0}
+.room:first-child{margin-top:0}
+.kicker{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--brass);margin:0 0 10px}
+.room-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:clamp(20px,5vw,80px);align-items:baseline;margin:0 0 clamp(24px,3vw,40px);border-top:1px solid var(--line);padding-top:22px}
+.dark .room-head{border-color:rgba(236,230,218,.18)}
+.room-head h3{font:400 clamp(28px,3vw,42px)/1.1 var(--serif);margin:0}
+.room-head p{margin:0;max-width:560px;color:#4a453d}
+
+.row{display:grid;gap:var(--gap);margin-bottom:var(--gap)}
+.row.wide{grid-template-columns:1fr}
+.row.pair{grid-template-columns:1fr 1fr}
+.row.trio{grid-template-columns:repeat(3,1fr)}
+.row.quad{grid-template-columns:repeat(4,1fr)}
+.row.offset{grid-template-columns:1fr 2fr}
+.row.offset.l{grid-template-columns:2fr 1fr}
+.row.offset.r .ph{grid-column:2}
+.row.wide .ph img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.row.pair .ph img,.row.trio .ph img,.row.offset .ph img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.row.quad .ph img{width:100%;aspect-ratio:2/3;object-fit:cover}
+.row.stair{max-width:900px;margin:0 auto clamp(50px,7vw,100px)}
+.row.stair .ph img{aspect-ratio:2/3}
+.ph{margin:0;overflow:hidden;background:#d8d0c2}
+.dark .ph{background:#121813}
+.ph button{display:block;width:100%}
+.ph img{transition:transform 1.4s cubic-bezier(.2,.7,.2,1),opacity .9s}
+.ph button:hover img{transform:scale(1.025)}
+
+/* bedrooms */
+.bed{display:grid;grid-template-columns:minmax(220px,1fr) 2.4fr;gap:clamp(24px,4vw,64px);padding:clamp(40px,5vw,70px) 0;border-top:1px solid var(--line)}
+.bed-n{font:italic 400 44px/1 var(--serif);color:var(--brass)}
+.bed h3{font:400 clamp(28px,3vw,40px)/1.1 var(--serif);margin:10px 0 16px}
+.bed p{margin:0;color:#4a453d;max-width:340px}
+.bed-text{position:sticky;top:100px;align-self:start}
+.bed-imgs{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)}
+.bed-imgs .main{grid-column:1/-1}
+.bed-imgs img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.bed-imgs .ph:not(.main) img{aspect-ratio:4/3}
+
+/* facts */
+.facts{padding:clamp(70px,11vw,160px) var(--gut);display:grid;grid-template-columns:1fr 1.6fr;gap:clamp(30px,6vw,100px)}
+.facts h2{font:400 clamp(38px,5vw,72px)/1 var(--serif);margin:0}
+.facts h2 em{color:var(--brass)}
+.facts dl{margin:0}
+.facts dl div{display:grid;grid-template-columns:170px 1fr;gap:20px;padding:20px 0;border-top:1px solid var(--line)}
+.facts dl div:last-child{border-bottom:1px solid var(--line)}
+.facts dt{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);padding-top:5px}
+.facts dd{margin:0;font:400 22px/1.4 var(--serif)}
+
+/* stay */
+.stay{position:relative;min-height:90svh;display:grid;place-items:center;text-align:center;color:#f6f1e7;padding:120px var(--gut);overflow:hidden}
+.stay>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.stay::before{content:"";position:absolute;inset:0;background:rgba(14,19,15,.62);z-index:1}
+.stay-in{position:relative;z-index:2;max-width:720px}
+.stay h2{font:400 clamp(44px,7vw,104px)/1 var(--serif);margin:0 0 26px}
+.stay p{font:400 clamp(19px,1.7vw,23px)/1.55 var(--serif);margin:0 auto 18px;color:#e4ddcf}
+.uses{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 30px;margin:34px 0 44px;padding:0;list-style:none;font-size:12px;letter-spacing:.26em;text-transform:uppercase}
+.btn{display:inline-block;background:#f6f1e7;color:var(--ink);padding:18px 34px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;text-decoration:none;transition:background .3s}
+.btn:hover{background:var(--brass);color:#fff}
+.btn.ghost{background:none;color:inherit;border:1px solid currentColor}
+.btn.ghost:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+/* all photos */
+.archive{padding:clamp(70px,10vw,140px) var(--gut);text-align:center}
+.archive h2{font:400 clamp(34px,4vw,56px)/1 var(--serif);margin:0 0 14px}
+.archive p{color:var(--muted);margin:0 0 30px}
+.all{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px;margin-top:40px;text-align:left}
+.all[hidden]{display:none}
+.all img{width:100%;aspect-ratio:1;object-fit:cover;transition:opacity .3s}
+.all button:hover img{opacity:.8}
+
+footer{background:var(--forest);color:#b9b2a4;padding:60px var(--gut) 40px;display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;font-size:13px;letter-spacing:.06em}
+footer .mark{color:#ece6da;font-size:34px}
+footer a{text-decoration:none;border-bottom:1px solid rgba(185,178,164,.4)}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:50;background:#0e110e;color:#ece6da;display:none;grid-template-rows:1fr auto;padding:56px clamp(10px,5vw,80px) 18px}
+.lb.open{display:grid}
+.lb figure{margin:0;display:grid;place-items:center;min-height:0}
+.lb img{max-width:100%;max-height:100%;object-fit:contain;width:auto;height:auto}
+.lb .bar{display:flex;justify-content:space-between;align-items:center;padding-top:14px;font-size:12px;letter-spacing:.22em;text-transform:uppercase}
+.lb .bar span:first-child{font:italic 400 20px var(--serif);letter-spacing:0;text-transform:none}
+.lb-close{position:absolute;top:14px;right:clamp(14px,3vw,30px);font-size:12px;letter-spacing:.24em;text-transform:uppercase}
+.lb-nav{position:absolute;top:0;bottom:60px;width:20%;font:300 46px var(--serif);color:rgba(236,230,218,.7)}
+.lb-nav:hover{color:#fff}
+.lb-prev{left:0;text-align:left;padding-left:clamp(10px,2vw,26px)}
+.lb-next{right:0;text-align:right;padding-right:clamp(10px,2vw,26px)}
+
+/* reveal */
+.js .reveal{opacity:0;transform:translateY(28px);transition:opacity 1.1s ease,transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.js .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js .reveal{opacity:1;transform:none}html{scroll-behavior:auto}}
+
+/* mobile */
+@media (max-width:900px){
+  .top nav{display:none}
+  .top nav.show{display:flex;position:fixed;inset:0;background:var(--paper);color:var(--ink);flex-direction:column;justify-content:center;align-items:center;gap:30px;z-index:-1}
+  .top nav.show a{font:400 34px var(--serif);letter-spacing:0;text-transform:none}
+  .menu-btn{display:block}
+  .top .cta{display:none}
+  .prologue{grid-template-columns:1fr}
+  .prologue .words{justify-self:start}
+  .facts{grid-template-columns:1fr}
+  .bed{grid-template-columns:1fr}
+  .bed-text{position:static}
+}
+@media (max-width:760px){
+  body{font-size:16px}
+  .row.pair,.row.trio,.row.offset,.row.offset.l{grid-template-columns:1fr}
+  .row.offset.r .ph{grid-column:1}
+  .row.quad{grid-template-columns:1fr 1fr}
+  .row.stair{grid-template-columns:1fr 1fr}
+  .row.wide .ph img{aspect-ratio:4/3}
+  .room-head{grid-template-columns:1fr;gap:10px}
+  .ch-head{grid-template-columns:1fr}
+  .num{grid-row:auto;margin-bottom:10px}
+  .facts dl div{grid-template-columns:1fr;gap:4px}
+  .hero-text{flex-direction:column;align-items:flex-start}
+  .all{grid-template-columns:repeat(3,1fr);gap:4px}
+  .lb{padding:56px 0 14px}
+  .lb .bar{padding:14px 16px 0}
+  .lb-nav{width:30%}
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js');document.body.classList.add('js')</script>
+
+<header class="top" id="top">
+  <a class="mark" href="#accueil">Le Chêne au Loup</a>
+  <nav id="nav" aria-label="Sections">
+    <a href="#parc">Le parc</a>
+    <a href="#demeure">La demeure</a>
+    <a href="#chambres">Les chambres</a>
+    <a href="#extension">L'extension</a>
+    <a href="#sejourner">Séjourner</a>
+  </nav>
+  <a class="cta" href="#sejourner">Réserver</a>
+  <button class="menu-btn" id="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+</header>
+
+<main>
+<section class="hero" id="accueil">
+  <img src="images/b6803e8219e9.jpg" alt="La façade de pierre du Chêne au Loup au bout de son allée" fetchpriority="high">
+  <div class="hero-text">
+    <div>
+      <p class="eyebrow">Domaine à louer</p>
+      <h1>Le Chêne<br><em>au</em>Loup</h1>
+    </div>
+    <p class="tag">Une demeure de pierre, son parc, ses dépendances. Rien autour que les arbres.</p>
+  </div>
+  <span class="scroll" aria-hidden="true"></span>
+</section>
+
+<section class="prologue">
+  <div class="words reveal">
+    <p class="drop">On y arrive par une allée sous les grands arbres. Au bout, la maison.</p>
+    <p>Pierre blonde, toiture d'ardoise, lucarnes alignées et jardin dessiné. Le Chêne au Loup est une demeure de caractère, entourée d'un parc boisé qui la tient à l'écart de tout.</p>
+    <p>Le domaine se loue en entier : la demeure et ses pièces de réception, quatre chambres, une extension contemporaine, les dépendances et le parc.</p>
+    <p class="sig">Bienvenue au domaine.</p>
+  </div>
+  <div class="reveal"><figure class="ph tall"><button type="button" data-i="10" aria-label="Agrandir : Le parc"><img src="images/680174a4c885-thumb.jpg" srcset="images/680174a4c885-thumb.jpg 1000w, images/680174a4c885.jpg 2400w" sizes="(max-width: 760px) 100vw, 45vw" width="2400" height="1350" alt="Le parc, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure></div>
+</section>
+
+<section class="chapter " id="parc"><header class="ch-head reveal"><span class="num">I</span><h2>Le parc</h2><p class="lead">Une allée sous les grands arbres, puis la maison de pierre au bout. Le domaine s'étend autour d'elle, entre jardins dessinés et bois.</p></header><div class="row wide"><figure class="ph "><button type="button" data-i="0" aria-label="Agrandir : Le parc"><img src="images/8b84a14d20aa-thumb.jpg" srcset="images/8b84a14d20aa-thumb.jpg 1000w, images/8b84a14d20aa.jpg 2400w" sizes="100vw" width="2400" height="1500" alt="Le parc, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure></div><article class="room reveal"><header class="room-head"><h3>Les jardins</h3><p>Pelouses tondues, haies de charmille, buis taillés en boule et massifs d'hortensias. Devant la maison, la terrasse de gravier accueille une grande table à l'ombre du parasol.</p></header><div class="row pair "><figure class="ph "><button type="button" data-i="1" aria-label="Agrandir : Le parc"><img src="images/d557c4e57eb2-thumb.jpg" srcset="images/d557c4e57eb2-thumb.jpg 1000w, images/d557c4e57eb2.jpg 2400w" sizes="(max-width: 760px) 100vw, 50vw" width="2400" height="1600" alt="Le parc, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure><figure class="ph "><button type="button" data-i="12" aria-label="Agrandir : Le parc"><img src="images/5d3dbc7675f9-thumb.jpg" srcset="images/5d3dbc7675f9-thumb.jpg 1000w, images/5d3dbc7675f9.jpg 2400w" sizes="(max-width: 760px) 100vw, 50vw" width="2400" height="1350" alt="Le parc, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure></div><div class="row trio"><figure class="ph "><button type="button" data-i="6" aria-label="Agrandir : Le parc"><img src="images/0136cdef3f2c-thumb.jpg" srcset="images/0136cdef3f2c-thumb.jpg 1000w, images/0136cdef3f2c.jpg 2400w" sizes="(max-width: 760px) 100vw, 33vw" width="2400" height="1350" alt="Le parc, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure><figure class="ph "><button type="button" data-i="14" aria-label="Agrandir : Le parc"><img src="images/c92b30711d01-thumb.jpg" srcset="images/c92b30711d01-thumb.jpg 1000w, images/c92b30711d01.jpg 2400w" sizes="(max-width: 760px) 100vw, 33vw" width="2400" height="1350" alt="Le parc, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure><figure class="ph "><button type="button" data-i="13" aria-label="Agrandir : Le parc"><img src="images/82cc8e20f850-thumb.jpg" srcset="images/82cc8e20f850-thumb.jpg 1000w, images/82cc8e20f850.jpg 2400w" sizes="(max-width: 760px) 100vw, 33vw" width="2400" height="1350" alt="Le parc, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure></div></article><article class="room reveal"><header class="room-head"><h3>Les dépendances</h3><p>Autour de la demeure, plusieurs bâtiments de pierre prolongent le domaine : longères, grange à large porte de bois, et une aile neuve en bardage clair.</p></header><div class="row pair "><figure class="ph "><button type="button" data-i="7" aria-label="Agrandir : Le parc"><img src="images/115d51fc5cbb-thumb.jpg" srcset="images/115d51fc5cbb-thumb.jpg 1000w, images/115d51fc5cbb.jpg 2400w" sizes="(max-width: 760px) 100vw, 50vw" width="2400" height="1350" alt="Le parc, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure><figure class="ph "><button type="button" data-i="8" aria-label="Agrandir : Le parc"><img src="images/63a4d8c4ee7f-thumb.jpg" srcset="images/63a4d8c4ee7f-thumb.jpg 1000w, images/63a4d8c4ee7f.jpg 2400w" sizes="(max-width: 760px) 100vw, 50vw" width="2400" height="1600" alt="Le parc, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure></div><div class="row pair "><figure class="ph "><button type="button" data-i="9" aria-label="Agrandir : Le parc"><img src="images/db1a1df4f48f-thumb.jpg" srcset="images/db1a1df4f48f-thumb.jpg 1000w, images/db1a1df4f48f.jpg 2400w" sizes="(max-width: 760px) 100vw, 50vw" width="2400" height="1350" alt="Le parc, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure><figure class="ph "><button type="button" data-i="15" aria-label="Agrandir : Le parc"><img src="images/24c308896ffe-thumb.jpg" srcset="images/24c308896ffe-thumb.jpg 1000w, images/24c308896ffe.jpg 2400w" sizes="(max-width: 760px) 100vw, 50vw" width="2400" height="1350" alt="Le parc, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure></div></article><div class="row offset l"><figure class="ph "><button type="button" data-i="4" aria-label="Agrandir : Le parc"><img src="images/ad5bf4ee9795-thumb.jpg" srcset="images/ad5bf4ee9795-thumb.jpg 1000w, images/ad5bf4ee9795.jpg 2400w" sizes="(max-width: 760px) 100vw, 66vw" width="2400" height="1350" alt="Le parc, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure></div></section>
+<section class="chapter dark" id="demeure"><header class="ch-head reveal"><span class="num">II</span><h2>La demeure</h2><p class="lead">Au rez-de-chaussée, les pièces de réception se suivent : boiseries, lustres, cheminées et parquets anciens.</p></header><article class="room reveal"><header class="room-head"><h3>Le salon</h3><p>Murs tendus de rouge, lustres de cristal, bibliothèque, tableaux et fauteuils capitonnés. La pièce a gardé l'esprit d'une maison de famille où l'on reçoit.</p></header><div class="row wide"><figure class="ph "><button type="button" data-i="19" aria-label="Agrandir : Le salon"><img src="images/bd9d1640f019-thumb.jpg" srcset="images/bd9d1640f019-thumb.jpg 1000w, images/bd9d1640f019.jpg 2400w" sizes="100vw" width="2400" height="1600" alt="Le salon, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure></div><div class="row pair "><figure class="ph "><button type="button" data-i="17" aria-label="Agrandir : Le salon"><img src="images/4e4ff155d158-thumb.jpg" srcset="images/4e4ff155d158-thumb.jpg 1000w, images/4e4ff155d158.jpg 2400w" sizes="(max-width: 760px) 100vw, 50vw" width="2400" height="1350" alt="Le salon, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure><figure class="ph "><button type="button" data-i="18" aria-label="Agrandir : Le salon"><img src="images/3899681965e1-thumb.jpg" srcset="images/3899681965e1-thumb.jpg 1000w, images/3899681965e1.jpg 2400w" sizes="(max-width: 760px) 100vw, 50vw" width="2400" height="1350" alt="Le salon, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure></div></article><article class="room reveal"><header class="room-head"><h3>La salle à manger</h3><p>Sous les poutres, la grande pièce s'organise entre la cheminée de pierre et l'escalier de bois tournant. On y dîne nombreux, on y reste tard.</p></header><div class="row wide"><figure class="ph "><button type="button" data-i="22" aria-label="Agrandir : La salle à manger"><img src="images/edbc6fd6c293-thumb.jpg" srcset="images/edbc6fd6c293-thumb.jpg 1000w, images/edbc6fd6c293.jpg 2400w" sizes="100vw" width="2400" height="1350" alt="La salle à manger, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure></div><div class="row pair "><figure class="ph "><button type="button" data-i="20" aria-label="Agrandir : La salle à manger"><img src="images/4ca2b22b631c-thumb.jpg" srcset="images/4ca2b22b631c-thumb.jpg 1000w, images/4ca2b22b631c.jpg 2400w" sizes="(max-width: 760px) 100vw, 50vw" width="2400" height="1350" alt="La salle à manger, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure><figure class="ph "><button type="button" data-i="23" aria-label="Agrandir : La salle à manger"><img src="images/1720441d30c7-thumb.jpg" srcset="images/1720441d30c7-thumb.jpg 1000w, images/1720441d30c7.jpg 2400w" sizes="(max-width: 760px) 100vw, 50vw" width="2400" height="1350" alt="La salle à manger, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure></div><div class="row pair "><figure class="ph "><button type="button" data-i="24" aria-label="Agrandir : La salle à manger"><img src="images/eab8fc6ec677-thumb.jpg" srcset="images/eab8fc6ec677-thumb.jpg 1000w, images/eab8fc6ec677.jpg 2400w" sizes="(max-width: 760px) 100vw, 50vw" width="2400" height="1350" alt="La salle à manger, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure><figure class="ph "><button type="button" data-i="25" aria-label="Agrandir : La salle à manger"><img src="images/b08fd1741734-thumb.jpg" srcset="images/b08fd1741734-thumb.jpg 1000w, images/b08fd1741734.jpg 2400w" sizes="(max-width: 760px) 100vw, 50vw" width="2400" height="1350" alt="La salle à manger, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure></div></article><article class="room reveal"><header class="room-head"><h3>La cuisine</h3><p>Une cuisine pensée pour cuisiner vraiment : îlot central, plans en inox, armoire ancienne, grande table, et une cheminée garnie de bûches.</p></header><div class="row wide"><figure class="ph "><button type="button" data-i="32" aria-label="Agrandir : La cuisine"><img src="images/29811f6d2a77-thumb.jpg" srcset="images/29811f6d2a77-thumb.jpg 1000w, images/29811f6d2a77.jpg 2400w" sizes="100vw" width="2400" height="1350" alt="La cuisine, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure></div><div class="row trio"><figure class="ph "><button type="button" data-i="26" aria-label="Agrandir : La cuisine"><img src="images/dcc6e96a1e6e-thumb.jpg" srcset="images/dcc6e96a1e6e-thumb.jpg 1000w, images/dcc6e96a1e6e.jpg 2400w" sizes="(max-width: 760px) 100vw, 33vw" width="2400" height="1350" alt="La cuisine, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure><figure class="ph "><button type="button" data-i="29" aria-label="Agrandir : La cuisine"><img src="images/7eda3bcae952-thumb.jpg" srcset="images/7eda3bcae952-thumb.jpg 1000w, images/7eda3bcae952.jpg 2400w" sizes="(max-width: 760px) 100vw, 33vw" width="2400" height="1350" alt="La cuisine, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure><figure class="ph "><button type="button" data-i="31" aria-label="Agrandir : La cuisine"><img src="images/c0d282e9a018-thumb.jpg" srcset="images/c0d282e9a018-thumb.jpg 1000w, images/c0d282e9a018.jpg 2400w" sizes="(max-width: 760px) 100vw, 33vw" width="2400" height="1350" alt="La cuisine, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure></div></article></section>
+<section class="chapter " id="chambres"><header class="ch-head reveal"><span class="num">III</span><h2>Les chambres</h2><p class="lead">Un escalier de bois mène aux chambres. Chacune a son décor, ses étoffes et ses meubles d'époque.</p></header><div class="row pair stair"><figure class="ph "><button type="button" data-i="33" aria-label="Agrandir : L&#x27;escalier"><img src="images/797d4b07cb94-thumb.jpg" srcset="images/797d4b07cb94-thumb.jpg 1000w, images/797d4b07cb94.jpg 1600w" sizes="(max-width: 760px) 100vw, 50vw" width="1600" height="2400" alt="L&#x27;escalier, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure><figure class="ph "><button type="button" data-i="35" aria-label="Agrandir : L&#x27;escalier"><img src="images/0859e8738048-thumb.jpg" srcset="images/0859e8738048-thumb.jpg 1000w, images/0859e8738048.jpg 1600w" sizes="(max-width: 760px) 100vw, 50vw" width="1600" height="2400" alt="L&#x27;escalier, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure></div><article class="bed reveal"><div class="bed-text"><span class="bed-n">I</span><h3>Chambre une</h3><p>La plus vaste. Toile de Jouy, lustre de cristal, coiffeuse vénitienne et sa salle d'eau attenante avec douche à l'italienne.</p></div><div class="bed-imgs"><figure class="ph main"><button type="button" data-i="36" aria-label="Agrandir : Chambre une"><img src="images/1bc7b5618304-thumb.jpg" srcset="images/1bc7b5618304-thumb.jpg 1000w, images/1bc7b5618304.jpg 2400w" sizes="(max-width: 760px) 100vw, 60vw" width="2400" height="1600" alt="Chambre une, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure><figure class="ph "><button type="button" data-i="41" aria-label="Agrandir : Chambre une"><img src="images/83697f0d7531-thumb.jpg" srcset="images/83697f0d7531-thumb.jpg 1000w, images/83697f0d7531.jpg 2400w" sizes="(max-width: 760px) 100vw, 33vw" width="2400" height="1600" alt="Chambre une, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure><figure class="ph "><button type="button" data-i="40" aria-label="Agrandir : Chambre une"><img src="images/44c76f40a516-thumb.jpg" srcset="images/44c76f40a516-thumb.jpg 1000w, images/44c76f40a516.jpg 1600w" sizes="(max-width: 760px) 100vw, 33vw" width="1600" height="2400" alt="Chambre une, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure></div></article><article class="bed reveal"><div class="bed-text"><span class="bed-n">II</span><h3>Chambre deux</h3><p>Rayures roses, médaillons dorés et grande armoire de bois verni. Une chambre de caractère, chaude et lumineuse.</p></div><div class="bed-imgs"><figure class="ph main"><button type="button" data-i="44" aria-label="Agrandir : Chambre deux"><img src="images/e404800ee9be-thumb.jpg" srcset="images/e404800ee9be-thumb.jpg 1000w, images/e404800ee9be.jpg 2400w" sizes="(max-width: 760px) 100vw, 60vw" width="2400" height="1600" alt="Chambre deux, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure><figure class="ph "><button type="button" data-i="43" aria-label="Agrandir : Chambre deux"><img src="images/7d38c2af006e-thumb.jpg" srcset="images/7d38c2af006e-thumb.jpg 1000w, images/7d38c2af006e.jpg 2400w" sizes="(max-width: 760px) 100vw, 33vw" width="2400" height="1600" alt="Chambre deux, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure><figure class="ph "><button type="button" data-i="45" aria-label="Agrandir : Chambre deux"><img src="images/9b0ee078e867-thumb.jpg" srcset="images/9b0ee078e867-thumb.jpg 1000w, images/9b0ee078e867.jpg 2400w" sizes="(max-width: 760px) 100vw, 33vw" width="2400" height="1600" alt="Chambre deux, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure></div></article><article class="bed reveal"><div class="bed-text"><span class="bed-n">III</span><h3>Chambre trois</h3><p>Papier peint à motifs, bureau ancien, lampes à abat-jour plissé. La plus intime des quatre.</p></div><div class="bed-imgs"><figure class="ph main"><button type="button" data-i="49" aria-label="Agrandir : Chambre trois"><img src="images/10dde5bd467a-thumb.jpg" srcset="images/10dde5bd467a-thumb.jpg 1000w, images/10dde5bd467a.jpg 2400w" sizes="(max-width: 760px) 100vw, 60vw" width="2400" height="1500" alt="Chambre trois, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure><figure class="ph "><button type="button" data-i="47" aria-label="Agrandir : Chambre trois"><img src="images/8fa14ffbc769-thumb.jpg" srcset="images/8fa14ffbc769-thumb.jpg 1000w, images/8fa14ffbc769.jpg 2400w" sizes="(max-width: 760px) 100vw, 33vw" width="2400" height="1500" alt="Chambre trois, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure><figure class="ph "><button type="button" data-i="48" aria-label="Agrandir : Chambre trois"><img src="images/6ed1c3db670d-thumb.jpg" srcset="images/6ed1c3db670d-thumb.jpg 1000w, images/6ed1c3db670d.jpg 2400w" sizes="(max-width: 760px) 100vw, 33vw" width="2400" height="1350" alt="Chambre trois, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure></div></article><article class="bed reveal"><div class="bed-text"><span class="bed-n">IV</span><h3>Chambre quatre</h3><p>Sous la pente du toit, des tons d'or et de rouge, un fauteuil capitonné et une lumière douce le soir.</p></div><div class="bed-imgs"><figure class="ph main"><button type="button" data-i="50" aria-label="Agrandir : Chambre quatre"><img src="images/5255a729b1c9-thumb.jpg" srcset="images/5255a729b1c9-thumb.jpg 1000w, images/5255a729b1c9.jpg 2400w" sizes="(max-width: 760px) 100vw, 60vw" width="2400" height="1600" alt="Chambre quatre, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure><figure class="ph "><button type="button" data-i="51" aria-label="Agrandir : Chambre quatre"><img src="images/1c7ff485215e-thumb.jpg" srcset="images/1c7ff485215e-thumb.jpg 1000w, images/1c7ff485215e.jpg 2400w" sizes="(max-width: 760px) 100vw, 33vw" width="2400" height="1600" alt="Chambre quatre, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure><figure class="ph "><button type="button" data-i="53" aria-label="Agrandir : Chambre quatre"><img src="images/31bb3bbb2201-thumb.jpg" srcset="images/31bb3bbb2201-thumb.jpg 1000w, images/31bb3bbb2201.jpg 2400w" sizes="(max-width: 760px) 100vw, 33vw" width="2400" height="1600" alt="Chambre quatre, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure></div></article><article class="room reveal"><header class="room-head"><h3>La salle de bains</h3><p>Mosaïque dorée du sol au plafond, douche à l'italienne, vasque posée sur un meuble de bois et fenêtre cintrée ouverte sur le parc.</p></header><div class="row quad"><figure class="ph "><button type="button" data-i="55" aria-label="Agrandir : Salle de bains"><img src="images/66dadc0e2fad-thumb.jpg" srcset="images/66dadc0e2fad-thumb.jpg 1000w, images/66dadc0e2fad.jpg 1600w" sizes="(max-width: 760px) 50vw, 25vw" width="1600" height="2400" alt="Salle de bains, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure><figure class="ph "><button type="button" data-i="57" aria-label="Agrandir : Salle de bains"><img src="images/38da5a3d0eb4-thumb.jpg" srcset="images/38da5a3d0eb4-thumb.jpg 1000w, images/38da5a3d0eb4.jpg 1600w" sizes="(max-width: 760px) 50vw, 25vw" width="1600" height="2400" alt="Salle de bains, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure><figure class="ph "><button type="button" data-i="54" aria-label="Agrandir : Salle de bains"><img src="images/51bd8c8b8e60-thumb.jpg" srcset="images/51bd8c8b8e60-thumb.jpg 1000w, images/51bd8c8b8e60.jpg 1600w" sizes="(max-width: 760px) 50vw, 25vw" width="1600" height="2400" alt="Salle de bains, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure><figure class="ph "><button type="button" data-i="56" aria-label="Agrandir : Salle de bains"><img src="images/5f0a5fbe6c64-thumb.jpg" srcset="images/5f0a5fbe6c64-thumb.jpg 1000w, images/5f0a5fbe6c64.jpg 1600w" sizes="(max-width: 760px) 50vw, 25vw" width="1600" height="2400" alt="Salle de bains, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure></div></article></section>
+<section class="chapter stone" id="extension"><header class="ch-head reveal"><span class="num">IV</span><h2>L'extension</h2><p class="lead">Accolée à la demeure, une aile contemporaine offre un second lieu de vie, plus libre et plus lumineux.</p></header><div class="row wide"><figure class="ph "><button type="button" data-i="61" aria-label="Agrandir : L&#x27;extension"><img src="images/bde5f13101b6-thumb.jpg" srcset="images/bde5f13101b6-thumb.jpg 1000w, images/bde5f13101b6.jpg 2400w" sizes="100vw" width="2400" height="1350" alt="L&#x27;extension, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure></div><article class="room reveal"><header class="room-head"><h3>Le séjour</h3><p>Pierre brute, verre et chêne clair. Canapé de cuir, fauteuils verts, cheminée suspendue : l'extension répond à la demeure avec une écriture contemporaine.</p></header><div class="row pair "><figure class="ph "><button type="button" data-i="62" aria-label="Agrandir : L&#x27;extension"><img src="images/be6aae535639-thumb.jpg" srcset="images/be6aae535639-thumb.jpg 1000w, images/be6aae535639.jpg 2400w" sizes="(max-width: 760px) 100vw, 50vw" width="2400" height="1350" alt="L&#x27;extension, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure><figure class="ph "><button type="button" data-i="64" aria-label="Agrandir : L&#x27;extension"><img src="images/9ac72ed74967-thumb.jpg" srcset="images/9ac72ed74967-thumb.jpg 1000w, images/9ac72ed74967.jpg 2400w" sizes="(max-width: 760px) 100vw, 50vw" width="2400" height="1600" alt="L&#x27;extension, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure></div><div class="row wide"><figure class="ph "><button type="button" data-i="63" aria-label="Agrandir : L&#x27;extension"><img src="images/23efafa27b4e-thumb.jpg" srcset="images/23efafa27b4e-thumb.jpg 1000w, images/23efafa27b4e.jpg 2400w" sizes="100vw" width="2400" height="1350" alt="L&#x27;extension, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure></div></article><article class="room reveal"><header class="room-head"><h3>Les circulations</h3><p>Un long couloir éclairé en douceur, le mur de pierre d'origine mis à nu, des rangements intégrés.</p></header><div class="row pair "><figure class="ph "><button type="button" data-i="58" aria-label="Agrandir : L&#x27;extension"><img src="images/ac83f05c2a7d-thumb.jpg" srcset="images/ac83f05c2a7d-thumb.jpg 1000w, images/ac83f05c2a7d.jpg 2400w" sizes="(max-width: 760px) 100vw, 50vw" width="2400" height="1600" alt="L&#x27;extension, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure><figure class="ph "><button type="button" data-i="60" aria-label="Agrandir : L&#x27;extension"><img src="images/d93e28034c6e-thumb.jpg" srcset="images/d93e28034c6e-thumb.jpg 1000w, images/d93e28034c6e.jpg 2400w" sizes="(max-width: 760px) 100vw, 50vw" width="2400" height="1600" alt="L&#x27;extension, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure></div></article><article class="room reveal"><header class="room-head"><h3>Sous les toits</h3><p>Sous la charpente, un grand espace de couchage éclairé par une baie triangulaire tournée vers les arbres.</p></header><div class="row wide"><figure class="ph "><button type="button" data-i="66" aria-label="Agrandir : L&#x27;extension"><img src="images/40af2d0bd7db-thumb.jpg" srcset="images/40af2d0bd7db-thumb.jpg 1000w, images/40af2d0bd7db.jpg 2400w" sizes="100vw" width="2400" height="1350" alt="L&#x27;extension, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure></div><div class="row pair "><figure class="ph "><button type="button" data-i="65" aria-label="Agrandir : L&#x27;extension"><img src="images/25b95ed8ef1d-thumb.jpg" srcset="images/25b95ed8ef1d-thumb.jpg 1000w, images/25b95ed8ef1d.jpg 2400w" sizes="(max-width: 760px) 100vw, 50vw" width="2400" height="1500" alt="L&#x27;extension, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure><figure class="ph "><button type="button" data-i="68" aria-label="Agrandir : L&#x27;extension"><img src="images/fc50fd5cd6c7-thumb.jpg" srcset="images/fc50fd5cd6c7-thumb.jpg 1000w, images/fc50fd5cd6c7.jpg 2400w" sizes="(max-width: 760px) 100vw, 50vw" width="2400" height="1350" alt="L&#x27;extension, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure></div></article></section>
+
+<section class="chapter" id="grange">
+  <header class="ch-head reveal"><span class="num">V</span><h2>Les communs</h2><p class="lead">Un espace de travail et de rangement, pour les vélos, le bois, le matériel de réception.</p></header>
+  <article class="room reveal"><header class="room-head"><h3>La grange</h3><p>Charpente apparente et murs de pierre. Elle sert de garage et d'atelier, et ouvre largement sur le parc.</p></header><div class="row pair "><figure class="ph "><button type="button" data-i="69" aria-label="Agrandir : La grange"><img src="images/c11163416c43-thumb.jpg" srcset="images/c11163416c43-thumb.jpg 1000w, images/c11163416c43.jpg 2400w" sizes="(max-width: 760px) 100vw, 50vw" width="2400" height="1350" alt="La grange, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure><figure class="ph "><button type="button" data-i="70" aria-label="Agrandir : La grange"><img src="images/7734ea7d5773-thumb.jpg" srcset="images/7734ea7d5773-thumb.jpg 1000w, images/7734ea7d5773.jpg 2400w" sizes="(max-width: 760px) 100vw, 50vw" width="2400" height="1350" alt="La grange, Le Chêne au Loup" loading="lazy" decoding="async"></button></figure></div></article>
+</section>
+
+<section class="facts" id="domaine">
+  <h2 class="reveal">Le domaine<br><em>en bref</em></h2>
+  <dl class="reveal"><div><dt>La demeure</dt><dd>Maison de maître en pierre, toiture d'ardoise à lucarnes</dd></div><div><dt>Réception</dt><dd>Salon, salle à manger avec cheminée, cuisine équipée</dd></div><div><dt>Couchage</dt><dd>Quatre chambres dans la demeure, un espace nuit sous les toits de l'extension</dd></div><div><dt>L'extension</dt><dd>Séjour contemporain, bureau ouvert sur le parc</dd></div><div><dt>Extérieurs</dt><dd>Parc arboré, jardins, terrasse, dépendances en pierre, grange</dd></div></dl>
+</section>
+
+<section class="stay" id="sejourner">
+  <img src="images/20176e24f855.jpg" alt="" loading="lazy" decoding="async">
+  <div class="stay-in reveal">
+    <p class="eyebrow">Location</p>
+    <h2>Séjourner au domaine</h2>
+    <p>Le Chêne au Loup se loue en exclusivité. Une maison entière pour vous, le temps d'un week-end, d'une semaine ou d'un événement.</p>
+    <ul class="uses"><li>Séjours</li><li>Réceptions</li><li>Séminaires</li><li>Prises de vue</li></ul>
+    <a class="btn" href="mailto:contact@exemple.fr?subject=Demande%20de%20disponibilit%C3%A9%20%C2%B7%20Le%20Ch%C3%AAne%20au%20Loup&body=Bonjour%2C%0A%0ADates%20souhait%C3%A9es%20%3A%0ANombre%20de%20personnes%20%3A%0AProjet%20%3A%0A">Demander une disponibilité</a>
+  </div>
+</section>
+
+<section class="archive" id="photos">
+  <h2>Toutes les photographies</h2>
+  <p>71 vues du domaine, de l'extérieur aux communs.</p>
+  <button class="btn ghost" id="show-all" aria-expanded="false" aria-controls="all">Afficher la galerie</button>
+  <div class="all" id="all" hidden><button type="button" data-i="0" aria-label="Agrandir : Le parc"><img src="images/8b84a14d20aa-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="1" aria-label="Agrandir : Le parc"><img src="images/d557c4e57eb2-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="2" aria-label="Agrandir : Le parc"><img src="images/20176e24f855-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="3" aria-label="Agrandir : Le parc"><img src="images/b6803e8219e9-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="4" aria-label="Agrandir : Le parc"><img src="images/ad5bf4ee9795-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="5" aria-label="Agrandir : Le parc"><img src="images/c6183ab28c90-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="6" aria-label="Agrandir : Le parc"><img src="images/0136cdef3f2c-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="7" aria-label="Agrandir : Le parc"><img src="images/115d51fc5cbb-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="8" aria-label="Agrandir : Le parc"><img src="images/63a4d8c4ee7f-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="9" aria-label="Agrandir : Le parc"><img src="images/db1a1df4f48f-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="10" aria-label="Agrandir : Le parc"><img src="images/680174a4c885-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="11" aria-label="Agrandir : Le parc"><img src="images/bf2f64fe34eb-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="12" aria-label="Agrandir : Le parc"><img src="images/5d3dbc7675f9-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="13" aria-label="Agrandir : Le parc"><img src="images/82cc8e20f850-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="14" aria-label="Agrandir : Le parc"><img src="images/c92b30711d01-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="15" aria-label="Agrandir : Le parc"><img src="images/24c308896ffe-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="16" aria-label="Agrandir : Le parc"><img src="images/79fc7507bcbb-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="17" aria-label="Agrandir : Le salon"><img src="images/4e4ff155d158-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="18" aria-label="Agrandir : Le salon"><img src="images/3899681965e1-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="19" aria-label="Agrandir : Le salon"><img src="images/bd9d1640f019-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="20" aria-label="Agrandir : La salle à manger"><img src="images/4ca2b22b631c-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="21" aria-label="Agrandir : La salle à manger"><img src="images/01982584faec-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="22" aria-label="Agrandir : La salle à manger"><img src="images/edbc6fd6c293-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="23" aria-label="Agrandir : La salle à manger"><img src="images/1720441d30c7-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="24" aria-label="Agrandir : La salle à manger"><img src="images/eab8fc6ec677-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="25" aria-label="Agrandir : La salle à manger"><img src="images/b08fd1741734-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="26" aria-label="Agrandir : La cuisine"><img src="images/dcc6e96a1e6e-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="27" aria-label="Agrandir : La cuisine"><img src="images/429916713f80-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="28" aria-label="Agrandir : La cuisine"><img src="images/6b6300c10ece-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="29" aria-label="Agrandir : La cuisine"><img src="images/7eda3bcae952-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="30" aria-label="Agrandir : La cuisine"><img src="images/2fa8bf5c74dc-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="31" aria-label="Agrandir : La cuisine"><img src="images/c0d282e9a018-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="32" aria-label="Agrandir : La cuisine"><img src="images/29811f6d2a77-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="33" aria-label="Agrandir : L&#x27;escalier"><img src="images/797d4b07cb94-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="34" aria-label="Agrandir : L&#x27;escalier"><img src="images/b96b032f3b96-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="35" aria-label="Agrandir : L&#x27;escalier"><img src="images/0859e8738048-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="36" aria-label="Agrandir : Chambre une"><img src="images/1bc7b5618304-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="37" aria-label="Agrandir : Chambre une"><img src="images/74255434ee3f-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="38" aria-label="Agrandir : Chambre une"><img src="images/ab4cf3fc7af2-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="39" aria-label="Agrandir : Chambre une"><img src="images/888aac225a52-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="40" aria-label="Agrandir : Chambre une"><img src="images/44c76f40a516-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="41" aria-label="Agrandir : Chambre une"><img src="images/83697f0d7531-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="42" aria-label="Agrandir : Chambre une"><img src="images/2c2256e08d5b-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="43" aria-label="Agrandir : Chambre deux"><img src="images/7d38c2af006e-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="44" aria-label="Agrandir : Chambre deux"><img src="images/e404800ee9be-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="45" aria-label="Agrandir : Chambre deux"><img src="images/9b0ee078e867-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="46" aria-label="Agrandir : Chambre trois"><img src="images/a28e03cc8509-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="47" aria-label="Agrandir : Chambre trois"><img src="images/8fa14ffbc769-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="48" aria-label="Agrandir : Chambre trois"><img src="images/6ed1c3db670d-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="49" aria-label="Agrandir : Chambre trois"><img src="images/10dde5bd467a-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="50" aria-label="Agrandir : Chambre quatre"><img src="images/5255a729b1c9-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="51" aria-label="Agrandir : Chambre quatre"><img src="images/1c7ff485215e-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="52" aria-label="Agrandir : Chambre quatre"><img src="images/eae1a90e355e-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="53" aria-label="Agrandir : Chambre quatre"><img src="images/31bb3bbb2201-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="54" aria-label="Agrandir : Salle de bains"><img src="images/51bd8c8b8e60-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="55" aria-label="Agrandir : Salle de bains"><img src="images/66dadc0e2fad-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="56" aria-label="Agrandir : Salle de bains"><img src="images/5f0a5fbe6c64-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="57" aria-label="Agrandir : Salle de bains"><img src="images/38da5a3d0eb4-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="58" aria-label="Agrandir : L&#x27;extension"><img src="images/ac83f05c2a7d-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="59" aria-label="Agrandir : L&#x27;extension"><img src="images/811486cedcf4-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="60" aria-label="Agrandir : L&#x27;extension"><img src="images/d93e28034c6e-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="61" aria-label="Agrandir : L&#x27;extension"><img src="images/bde5f13101b6-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="62" aria-label="Agrandir : L&#x27;extension"><img src="images/be6aae535639-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="63" aria-label="Agrandir : L&#x27;extension"><img src="images/23efafa27b4e-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="64" aria-label="Agrandir : L&#x27;extension"><img src="images/9ac72ed74967-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="65" aria-label="Agrandir : L&#x27;extension"><img src="images/25b95ed8ef1d-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="66" aria-label="Agrandir : L&#x27;extension"><img src="images/40af2d0bd7db-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="67" aria-label="Agrandir : L&#x27;extension"><img src="images/761988eecf25-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="68" aria-label="Agrandir : L&#x27;extension"><img src="images/fc50fd5cd6c7-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="69" aria-label="Agrandir : La grange"><img src="images/c11163416c43-thumb.jpg" alt="" loading="lazy" decoding="async"></button><button type="button" data-i="70" aria-label="Agrandir : La grange"><img src="images/7734ea7d5773-thumb.jpg" alt="" loading="lazy" decoding="async"></button></div>
+</section>
+</main>
+
+<footer>
+  <div><div class="mark">Le Chêne au Loup</div><p>Domaine à louer</p></div>
+  <div><a href="mailto:contact@exemple.fr">contact@exemple.fr</a></div>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photographie">
+  <button class="lb-close" id="lb-close">Fermer</button>
+  <figure><img id="lb-img" alt=""></figure>
+  <button class="lb-nav lb-prev" id="lb-prev" aria-label="Photo précédente">‹</button>
+  <button class="lb-nav lb-next" id="lb-next" aria-label="Photo suivante">›</button>
+  <div class="bar"><span id="lb-cap"></span><span id="lb-count"></span></div>
+</div>
+
+<script>
+const P=[{"s": "images/8b84a14d20aa.jpg", "l": "Le parc", "w": 2400, "h": 1500}, {"s": "images/d557c4e57eb2.jpg", "l": "Le parc", "w": 2400, "h": 1600}, {"s": "images/20176e24f855.jpg", "l": "Le parc", "w": 2400, "h": 1500}, {"s": "images/b6803e8219e9.jpg", "l": "Le parc", "w": 2400, "h": 1600}, {"s": "images/ad5bf4ee9795.jpg", "l": "Le parc", "w": 2400, "h": 1350}, {"s": "images/c6183ab28c90.jpg", "l": "Le parc", "w": 2400, "h": 1350}, {"s": "images/0136cdef3f2c.jpg", "l": "Le parc", "w": 2400, "h": 1350}, {"s": "images/115d51fc5cbb.jpg", "l": "Le parc", "w": 2400, "h": 1350}, {"s": "images/63a4d8c4ee7f.jpg", "l": "Le parc", "w": 2400, "h": 1600}, {"s": "images/db1a1df4f48f.jpg", "l": "Le parc", "w": 2400, "h": 1350}, {"s": "images/680174a4c885.jpg", "l": "Le parc", "w": 2400, "h": 1350}, {"s": "images/bf2f64fe34eb.jpg", "l": "Le parc", "w": 2400, "h": 1350}, {"s": "images/5d3dbc7675f9.jpg", "l": "Le parc", "w": 2400, "h": 1350}, {"s": "images/82cc8e20f850.jpg", "l": "Le parc", "w": 2400, "h": 1350}, {"s": "images/c92b30711d01.jpg", "l": "Le parc", "w": 2400, "h": 1350}, {"s": "images/24c308896ffe.jpg", "l": "Le parc", "w": 2400, "h": 1350}, {"s": "images/79fc7507bcbb.jpg", "l": "Le parc", "w": 1600, "h": 2400}, {"s": "images/4e4ff155d158.jpg", "l": "Le salon", "w": 2400, "h": 1350}, {"s": "images/3899681965e1.jpg", "l": "Le salon", "w": 2400, "h": 1350}, {"s": "images/bd9d1640f019.jpg", "l": "Le salon", "w": 2400, "h": 1600}, {"s": "images/4ca2b22b631c.jpg", "l": "La salle à manger", "w": 2400, "h": 1350}, {"s": "images/01982584faec.jpg", "l": "La salle à manger", "w": 2400, "h": 1350}, {"s": "images/edbc6fd6c293.jpg", "l": "La salle à manger", "w": 2400, "h": 1350}, {"s": "images/1720441d30c7.jpg", "l": "La salle à manger", "w": 2400, "h": 1350}, {"s": "images/eab8fc6ec677.jpg", "l": "La salle à manger", "w": 2400, "h": 1350}, {"s": "images/b08fd1741734.jpg", "l": "La salle à manger", "w": 2400, "h": 1350}, {"s": "images/dcc6e96a1e6e.jpg", "l": "La cuisine", "w": 2400, "h": 1350}, {"s": "images/429916713f80.jpg", "l": "La cuisine", "w": 2400, "h": 1350}, {"s": "images/6b6300c10ece.jpg", "l": "La cuisine", "w": 2400, "h": 1350}, {"s": "images/7eda3bcae952.jpg", "l": "La cuisine", "w": 2400, "h": 1350}, {"s": "images/2fa8bf5c74dc.jpg", "l": "La cuisine", "w": 2400, "h": 1350}, {"s": "images/c0d282e9a018.jpg", "l": "La cuisine", "w": 2400, "h": 1350}, {"s": "images/29811f6d2a77.jpg", "l": "La cuisine", "w": 2400, "h": 1350}, {"s": "images/797d4b07cb94.jpg", "l": "L'escalier", "w": 1600, "h": 2400}, {"s": "images/b96b032f3b96.jpg", "l": "L'escalier", "w": 2400, "h": 1350}, {"s": "images/0859e8738048.jpg", "l": "L'escalier", "w": 1600, "h": 2400}, {"s": "images/1bc7b5618304.jpg", "l": "Chambre une", "w": 2400, "h": 1600}, {"s": "images/74255434ee3f.jpg", "l": "Chambre une", "w": 2400, "h": 1350}, {"s": "images/ab4cf3fc7af2.jpg", "l": "Chambre une", "w": 1600, "h": 2400}, {"s": "images/888aac225a52.jpg", "l": "Chambre une", "w": 1350, "h": 2400}, {"s": "images/44c76f40a516.jpg", "l": "Chambre une", "w": 1600, "h": 2400}, {"s": "images/83697f0d7531.jpg", "l": "Chambre une", "w": 2400, "h": 1600}, {"s": "images/2c2256e08d5b.jpg", "l": "Chambre une", "w": 2400, "h": 1600}, {"s": "images/7d38c2af006e.jpg", "l": "Chambre deux", "w": 2400, "h": 1600}, {"s": "images/e404800ee9be.jpg", "l": "Chambre deux", "w": 2400, "h": 1600}, {"s": "images/9b0ee078e867.jpg", "l": "Chambre deux", "w": 2400, "h": 1600}, {"s": "images/a28e03cc8509.jpg", "l": "Chambre trois", "w": 2400, "h": 1350}, {"s": "images/8fa14ffbc769.jpg", "l": "Chambre trois", "w": 2400, "h": 1500}, {"s": "images/6ed1c3db670d.jpg", "l": "Chambre trois", "w": 2400, "h": 1350}, {"s": "images/10dde5bd467a.jpg", "l": "Chambre trois", "w": 2400, "h": 1500}, {"s": "images/5255a729b1c9.jpg", "l": "Chambre quatre", "w": 2400, "h": 1600}, {"s": "images/1c7ff485215e.jpg", "l": "Chambre quatre", "w": 2400, "h": 1600}, {"s": "images/eae1a90e355e.jpg", "l": "Chambre quatre", "w": 2400, "h": 1600}, {"s": "images/31bb3bbb2201.jpg", "l": "Chambre quatre", "w": 2400, "h": 1600}, {"s": "images/51bd8c8b8e60.jpg", "l": "Salle de bains", "w": 1600, "h": 2400}, {"s": "images/66dadc0e2fad.jpg", "l": "Salle de bains", "w": 1600, "h": 2400}, {"s": "images/5f0a5fbe6c64.jpg", "l": "Salle de bains", "w": 1600, "h": 2400}, {"s": "images/38da5a3d0eb4.jpg", "l": "Salle de bains", "w": 1600, "h": 2400}, {"s": "images/ac83f05c2a7d.jpg", "l": "L'extension", "w": 2400, "h": 1600}, {"s": "images/811486cedcf4.jpg", "l": "L'extension", "w": 2400, "h": 1600}, {"s": "images/d93e28034c6e.jpg", "l": "L'extension", "w": 2400, "h": 1600}, {"s": "images/bde5f13101b6.jpg", "l": "L'extension", "w": 2400, "h": 1350}, {"s": "images/be6aae535639.jpg", "l": "L'extension", "w": 2400, "h": 1350}, {"s": "images/23efafa27b4e.jpg", "l": "L'extension", "w": 2400, "h": 1350}, {"s": "images/9ac72ed74967.jpg", "l": "L'extension", "w": 2400, "h": 1600}, {"s": "images/25b95ed8ef1d.jpg", "l": "L'extension", "w": 2400, "h": 1500}, {"s": "images/40af2d0bd7db.jpg", "l": "L'extension", "w": 2400, "h": 1350}, {"s": "images/761988eecf25.jpg", "l": "L'extension", "w": 2400, "h": 1500}, {"s": "images/fc50fd5cd6c7.jpg", "l": "L'extension", "w": 2400, "h": 1350}, {"s": "images/c11163416c43.jpg", "l": "La grange", "w": 2400, "h": 1350}, {"s": "images/7734ea7d5773.jpg", "l": "La grange", "w": 2400, "h": 1350}];
+const $=s=>document.querySelector(s);
+const top_=$('#top'),hero=$('#accueil');
+const onScroll=()=>top_.classList.toggle('solid',scrollY>hero.offsetHeight-90);
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+const nav=$('#nav'),menu=$('#menu');
+menu.onclick=()=>{const o=nav.classList.toggle('show');menu.setAttribute('aria-expanded',o);menu.textContent=o?'Fermer':'Menu';top_.classList.toggle('solid',o||scrollY>hero.offsetHeight-90)};
+nav.querySelectorAll('a').forEach(a=>a.onclick=()=>{if(nav.classList.contains('show'))menu.click()});
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+$('#show-all').onclick=e=>{const g=$('#all');g.hidden=!g.hidden;e.target.setAttribute('aria-expanded',!g.hidden);e.target.textContent=g.hidden?'Afficher la galerie':'Masquer la galerie'};
+
+const lb=$('#lb'),img=$('#lb-img');let cur=0,last=null;
+function show(i){cur=(i+P.length)%P.length;const p=P[cur];img.src=p.s;img.alt=p.l;$('#lb-cap').textContent=p.l;$('#lb-count').textContent=(cur+1)+' / '+P.length;
+  [cur+1,cur-1].forEach(j=>{const n=P[(j+P.length)%P.length];new Image().src=n.s})}
+function open(i){last=document.activeElement;show(i);lb.classList.add('open');document.body.style.overflow='hidden';$('#lb-close').focus()}
+function close(){lb.classList.remove('open');document.body.style.overflow='';last&&last.focus()}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-i]');if(b)open(+b.dataset.i)});
+$('#lb-close').onclick=close;$('#lb-prev').onclick=()=>show(cur-1);$('#lb-next').onclick=()=>show(cur+1);
+document.addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1)});
+let sx=null;lb.addEventListener('touchstart',e=>sx=e.touches[0].clientX,{passive:true});
+lb.addEventListener('touchend',e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>50)show(cur+(dx<0?1:-1));sx=null});
+</script>
+</body>
+</html>
