@@ -274,10 +274,7 @@ footer .lang button{letter-spacing:.12em}
 
 
 .si-h{position:relative}
-.si-h::after{content:"";position:absolute;left:42px;right:0;bottom:-1px;height:1px;background:var(--brass);transform:scaleX(0);transform-origin:left;opacity:0}
-.sets-ui.run .si.on .si-h::after{opacity:1;animation:siprog var(--dur,6000ms) linear forwards}
-.si.on .si-h::after{opacity:.0}
-@keyframes siprog{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.sets-ui.run .si.on .si.on @keyframes siprog{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 
 /* facts */
 .facts{padding:clamp(70px,11vw,160px) var(--gut);display:grid;grid-template-columns:1fr 1.6fr;gap:clamp(30px,6vw,100px)}
