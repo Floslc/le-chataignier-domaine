@@ -272,6 +272,13 @@ footer .lang button{letter-spacing:.12em}
   .si-img img{width:100%;aspect-ratio:4/5;object-fit:cover}
 }
 
+
+.si-h{position:relative}
+.si-h::after{content:"";position:absolute;left:42px;right:0;bottom:-1px;height:1px;background:var(--brass);transform:scaleX(0);transform-origin:left;opacity:0}
+.sets-ui.run .si.on .si-h::after{opacity:1;animation:siprog var(--dur,6000ms) linear forwards}
+.si.on .si-h::after{opacity:.0}
+@keyframes siprog{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+
 /* facts */
 .facts{padding:clamp(70px,11vw,160px) var(--gut);display:grid;grid-template-columns:1fr 1.6fr;gap:clamp(30px,6vw,100px)}
 .facts h2{font:400 clamp(38px,5vw,72px)/1 var(--serif);margin:0}
@@ -565,11 +572,24 @@ document.querySelectorAll('.lang button').forEach(b=>b.onclick=()=>setLang(b.dat
   setLang(l)})();
 
 (function(){const ui=document.querySelector('.sets-ui');if(!ui)return;
-  const items=[...ui.querySelectorAll('.si')],imgs=[...ui.querySelectorAll('.st-img')],cur=$('#st-cur');let k=0;
-  function sel(n){k=n;items.forEach((it,j)=>{it.classList.toggle('on',j===n);it.querySelector('.si-h').setAttribute('aria-expanded',j===n)});
-    imgs.forEach((im,j)=>im.classList.toggle('on',j===n));cur.textContent=String(n+1).padStart(2,'0')}
-  items.forEach((it,j)=>{const h=it.querySelector('.si-h');h.addEventListener('mouseenter',()=>{if(matchMedia('(hover:hover)').matches)sel(j)});h.addEventListener('click',()=>sel(j));h.addEventListener('focus',()=>sel(j))});
-  ui.querySelector('.st-hit').addEventListener('click',()=>{const b=items[k].querySelector('.si-img');openLb(+b.dataset.i)});})();
+  const items=[...ui.querySelectorAll('.si')],imgs=[...ui.querySelectorAll('.st-img')],cur=$('#st-cur');
+  const DUR=6000;let k=0,timer=null,hold=false,visible=false;
+  const auto=!matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function sel(n){k=(n+items.length)%items.length;items.forEach((it,j)=>{it.classList.toggle('on',j===k);it.querySelector('.si-h').setAttribute('aria-expanded',j===k)});
+    imgs.forEach((im,j)=>im.classList.toggle('on',j===k));cur.textContent=String(k+1).padStart(2,'0');restart()}
+  function restart(){clearTimeout(timer);ui.classList.remove('run');void ui.offsetWidth;
+    if(auto&&visible&&!hold&&innerWidth>900){ui.classList.add('run');timer=setTimeout(()=>sel(k+1),DUR)}}
+  items.forEach((it,j)=>{const h=it.querySelector('.si-h');
+    h.addEventListener('mouseenter',()=>{if(matchMedia('(hover:hover)').matches&&j!==k)sel(j)});
+    h.addEventListener('click',()=>sel(j));h.addEventListener('focus',()=>sel(j))});
+  ui.addEventListener('mouseenter',()=>{hold=true;restart()});
+  ui.addEventListener('mouseleave',()=>{hold=false;restart()});
+  ui.addEventListener('focusin',()=>{hold=true;restart()});
+  ui.addEventListener('focusout',()=>{hold=false;restart()});
+  new IntersectionObserver(es=>{visible=es[0].isIntersecting;restart()},{threshold:.35}).observe(ui);
+  document.addEventListener('visibilitychange',()=>{visible=!document.hidden&&visible;restart()});
+  ui.querySelector('.st-hit').addEventListener('click',()=>{const b=items[k].querySelector('.si-img');openLb(+b.dataset.i)});
+  ui.style.setProperty('--dur',DUR+'ms')})();
 
 const trail=$('#trail'),tlinks=[...trail.querySelectorAll('a')],tsec=tlinks.map(a=>$(a.getAttribute('href')));
 function upTrail(){const y=scrollY+innerHeight*.45;let k=-1;tsec.forEach((s,i)=>{if(s.offsetTop<=y)k=i});
