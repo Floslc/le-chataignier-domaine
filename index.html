@@ -199,6 +199,28 @@ footer .lang button{letter-spacing:.12em}
 .btn.light:hover{background:#f6f1e7;color:var(--ink);border-color:#f6f1e7}
 @media (max-width:900px){.top .lang{margin-left:auto;margin-right:22px}}
 
+
+/* décors */
+.sets{padding:clamp(80px,12vw,170px) var(--gut);background:var(--forest);color:#ece6da}
+.sets-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(24px,6vw,100px);align-items:end;margin-bottom:clamp(40px,6vw,80px)}
+.sets-head .eyebrow{color:var(--brass)}
+.sets-head h2{font:400 clamp(40px,5.6vw,84px)/1 var(--serif);margin:0}
+.sets-head h2 em{color:var(--brass)}
+.sets-head p{font:400 clamp(19px,1.7vw,24px)/1.5 var(--serif);color:#c9c2b4;margin:0;max-width:600px}
+.sets-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.6vw,24px)}
+.set{margin:0;display:flex;flex-direction:column}
+.set .ph{position:relative;background:#121813}
+.set .ph img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.set .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,14,10,0) 55%,rgba(10,14,10,.65));pointer-events:none}
+.set .lbl{position:absolute;left:16px;right:16px;bottom:14px;z-index:2;pointer-events:none}
+.set .n{display:block;font:400 11px var(--sans);letter-spacing:.3em;color:#e2c99c;margin-bottom:8px;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+.set h3{font:400 clamp(22px,2vw,30px)/1.05 var(--serif);margin:0;color:#f6f1e7}
+.set p{font-size:14px;line-height:1.65;color:#b9b2a4;margin:14px 0 0}
+.set.text .card{aspect-ratio:3/4;border:1px solid rgba(168,138,92,.45);display:flex;flex-direction:column;justify-content:flex-end;padding:16px;position:relative}
+.set.text .card b{position:absolute;top:18px;left:16px;font:italic 400 clamp(52px,5vw,78px)/1 var(--serif);color:var(--brass);font-weight:400}
+@media (max-width:1100px){.sets-grid{grid-template-columns:repeat(2,1fr)}.sets-head{grid-template-columns:1fr}}
+@media (max-width:520px){.set p{font-size:13px}}
+
 /* facts */
 .facts{padding:clamp(70px,11vw,160px) var(--gut);display:grid;grid-template-columns:1fr 1.6fr;gap:clamp(30px,6vw,100px)}
 .facts h2{font:400 clamp(38px,5vw,72px)/1 var(--serif);margin:0}
@@ -328,6 +350,7 @@ footer a{text-decoration:none;border-bottom:1px solid rgba(185,178,164,.4)}
     <a href="#demeure"><x-t data-en="The house">La demeure</x-t></a>
     <a href="#chambres"><x-t data-en="The bedrooms">Les chambres</x-t></a>
     <a href="#extension"><x-t data-en="The new wing">L'extension</x-t></a>
+    <a href="#decors"><x-t data-en="Settings">Décors</x-t></a>
     <a href="#photos"><x-t data-en="Photographs">Photographies</x-t></a>
   </nav>
   <div class="lang" role="group" aria-label="Langue / Language"><button type="button" data-l="fr" lang="fr">FR</button><span aria-hidden="true">/</span><button type="button" data-l="en" lang="en">EN</button></div>
@@ -341,10 +364,11 @@ footer a{text-decoration:none;border-bottom:1px solid rgba(185,178,164,.4)}
   <li><a href="#chambres"><span><x-t data-en="The bedrooms">Les chambres</x-t></span><i></i></a></li>
   <li><a href="#extension"><span><x-t data-en="The new wing">L'extension</x-t></span><i></i></a></li>
   <li><a href="#grange"><span><x-t data-en="Service buildings">Les communs</x-t></span><i></i></a></li>
+  <li><a href="#decors"><span><x-t data-en="Settings">Décors</x-t></span><i></i></a></li>
   <li><a href="#photos"><span><x-t data-en="Photographs">Photographies</x-t></span><i></i></a></li>
 </ol>
 <nav class="mnav" id="mnav" aria-label="Menu">
-  <a href="#histoire"><x-t data-en="History">Histoire</x-t></a><a href="#parc"><x-t data-en="The grounds">Le parc</x-t></a><a href="#demeure"><x-t data-en="The house">La demeure</x-t></a><a href="#chambres"><x-t data-en="The bedrooms">Les chambres</x-t></a><a href="#extension"><x-t data-en="The new wing">L'extension</x-t></a><a href="#grange"><x-t data-en="Service buildings">Les communs</x-t></a><a href="#photos"><x-t data-en="Photographs">Photographies</x-t></a>
+  <a href="#histoire"><x-t data-en="History">Histoire</x-t></a><a href="#parc"><x-t data-en="The grounds">Le parc</x-t></a><a href="#demeure"><x-t data-en="The house">La demeure</x-t></a><a href="#chambres"><x-t data-en="The bedrooms">Les chambres</x-t></a><a href="#extension"><x-t data-en="The new wing">L'extension</x-t></a><a href="#grange"><x-t data-en="Service buildings">Les communs</x-t></a><a href="#decors"><x-t data-en="Settings">Décors</x-t></a><a href="#photos"><x-t data-en="Photographs">Photographies</x-t></a>
 </nav>
 <main>
 <section class="hero" id="accueil">
@@ -399,6 +423,15 @@ footer a{text-decoration:none;border-bottom:1px solid rgba(185,178,164,.4)}
 <section class="chapter" id="grange">
   <header class="ch-head reveal"><span class="num">V</span><h2><x-t data-en="Service buildings">Les communs</x-t></h2><p class="lead"><x-t data-en="Then come the service buildings, where the estate goes about its work: workshop, garage and woodstore, beneath an exposed timber frame.">Il reste les communs, là où le domaine travaille : atelier, garage et réserve à bois, sous une charpente apparente.</x-t></p></header>
   <article class="room reveal"><header class="room-head"><h3><x-t data-en="The barn">La grange</x-t></h3><p><x-t data-en="Exposed timbers and walls of stone. The barn houses the garage and workshop, its great doors opening wide onto the park.">Charpente apparente et murs de pierre. Elle abrite garage et atelier, et s'ouvre largement sur le parc.</x-t></p></header><div class="row pair "><figure class="ph "><button type="button" data-i="69" aria-label="Agrandir : La grange"><img src="images/c11163416c43-thumb.jpg" srcset="images/c11163416c43-thumb.jpg 1000w, images/c11163416c43.jpg 2400w" sizes="(max-width: 760px) 100vw, 50vw" width="2400" height="1350" alt="La grange, Le Châtaignier" loading="lazy" decoding="async"></button></figure><figure class="ph "><button type="button" data-i="70" aria-label="Agrandir : La grange"><img src="images/7734ea7d5773-thumb.jpg" srcset="images/7734ea7d5773-thumb.jpg 1000w, images/7734ea7d5773.jpg 2400w" sizes="(max-width: 760px) 100vw, 50vw" width="2400" height="1350" alt="La grange, Le Châtaignier" loading="lazy" decoding="async"></button></figure></div></article>
+</section>
+
+
+<section class="sets" id="decors">
+  <div class="sets-head reveal">
+    <div><p class="eyebrow"><x-t data-en="Settings">Décors</x-t></p><h2><x-t data-en="One estate,&lt;br&gt;&lt;em&gt;many centuries&lt;/em&gt;">Un domaine,<br><em>plusieurs siècles</em></x-t></h2></div>
+    <p><x-t data-en="The Middle Ages three hundred meters away, a house born of the Revolution, formal drawing rooms, a wing of our own time, and the forest all around. At Le Châtaignier, every era has its setting.">Le Moyen Âge à trois cents mètres, une demeure née de la Révolution, des salons d'apparat, une aile d'aujourd'hui, et la forêt tout autour. Au Châtaignier, chaque époque a son décor.</x-t></p>
+  </div>
+  <div class="sets-grid"><figure class="set reveal"><div class="ph"><button type="button" data-i="10" aria-label="Le parc"><img src="images/680174a4c885-thumb.jpg" alt="" loading="lazy" decoding="async" width="2400" height="1350"></button><div class="lbl"><span class="n">01</span><h3><x-t data-en="The forest">La forêt</x-t></h3></div></div><p><x-t data-en="An avenue of tall conifers where the light falls in long shafts. The opening shot of a story.">Une allée de grands résineux où la lumière tombe en nappes. Le premier plan d'une histoire.</x-t></p></figure><figure class="set text reveal"><div class="card"><b>300 m</b><div><span class="n" style="display:block;font:300 10px var(--sans);letter-spacing:.3em;color:var(--brass);margin-bottom:6px">02</span><h3><x-t data-en="The ruins">Les ruines</x-t></h3></div></div><p><x-t data-en="The ruins of La Hunaudaye, a thirteenth-century fortress and listed historic monument, a few minutes&#x27; walk away.">Les ruines de la Hunaudaye, forteresse du XIII<sup>e</sup> siècle classée monument historique, à quelques minutes à pied.</x-t></p></figure><figure class="set reveal"><div class="ph"><button type="button" data-i="3" aria-label="Le parc"><img src="images/b6803e8219e9-thumb.jpg" alt="" loading="lazy" decoding="async" width="2400" height="1600"></button><div class="lbl"><span class="n">03</span><h3><x-t data-en="The manor">La demeure</x-t></h3></div></div><p><x-t data-en="A stone façade at the end of its avenue, calm and symmetrical, as if lifted from the pages of a novel.">Une façade de pierre au bout de son allée, calme et symétrique, comme sortie d'un roman.</x-t></p></figure><figure class="set reveal"><div class="ph"><button type="button" data-i="19" aria-label="Le salon"><img src="images/bd9d1640f019-thumb.jpg" alt="" loading="lazy" decoding="async" width="2400" height="1600"></button><div class="lbl"><span class="n">04</span><h3><x-t data-en="The drawing rooms">Les salons</x-t></h3></div></div><p><x-t data-en="Burgundy, crystal and gilt: period interiors that call for costumes and candlelight.">Bordeaux, cristal et dorures : des intérieurs d'époque qui appellent les costumes et les bougies.</x-t></p></figure><figure class="set reveal"><div class="ph"><button type="button" data-i="44" aria-label="Chambre deux"><img src="images/e404800ee9be-thumb.jpg" alt="" loading="lazy" decoding="async" width="2400" height="1600"></button><div class="lbl"><span class="n">05</span><h3><x-t data-en="The bedrooms">Les chambres</x-t></h3></div></div><p><x-t data-en="Four rooms, four moods, from Venetian elegance to a gilded attic hideaway.">Quatre chambres, quatre atmosphères, de l'élégance vénitienne à la mansarde aux tons d'or.</x-t></p></figure><figure class="set reveal"><div class="ph"><button type="button" data-i="63" aria-label="L&#x27;extension"><img src="images/23efafa27b4e-thumb.jpg" alt="" loading="lazy" decoding="async" width="2400" height="1350"></button><div class="lbl"><span class="n">06</span><h3><x-t data-en="The modern wing">L'aile contemporaine</x-t></h3></div></div><p><x-t data-en="Glass, oak and raw stone: the present day, without ever leaving the estate.">Verre, chêne et pierre brute : le présent, sans quitter le domaine.</x-t></p></figure><figure class="set reveal"><div class="ph"><button type="button" data-i="69" aria-label="La grange"><img src="images/c11163416c43-thumb.jpg" alt="" loading="lazy" decoding="async" width="2400" height="1350"></button><div class="lbl"><span class="n">07</span><h3><x-t data-en="The barn">La grange</x-t></h3></div></div><p><x-t data-en="Exposed timbers and stone walls: a raw, rural setting, outside of time.">Charpente apparente et murs de pierre : un décor brut, rural, hors du temps.</x-t></p></figure><figure class="set reveal"><div class="ph"><button type="button" data-i="1" aria-label="Le parc"><img src="images/d557c4e57eb2-thumb.jpg" alt="" loading="lazy" decoding="async" width="2400" height="1600"></button><div class="lbl"><span class="n">08</span><h3><x-t data-en="The park">Le parc</x-t></h3></div></div><p><x-t data-en="Lawns, boxwood and great trees: grounds that change their face with every season.">Pelouses, buis et grands arbres : des extérieurs qui changent de visage à chaque saison.</x-t></p></figure></div>
 </section>
 
 <section class="facts" id="domaine">
@@ -488,7 +521,7 @@ const trail=$('#trail'),tlinks=[...trail.querySelectorAll('a')],tsec=tlinks.map(
 function upTrail(){const y=scrollY+innerHeight*.45;let k=-1;tsec.forEach((s,i)=>{if(s.offsetTop<=y)k=i});
   trail.classList.toggle('on',k>=0&&scrollY>hero.offsetHeight*.8&&!lb.classList.contains('open'));
   tlinks.forEach((a,i)=>a.classList.toggle('cur',i===k));
-  const s=tsec[k];trail.classList.toggle('light',!!s&&(s.classList.contains('dark')||s.classList.contains('story')||s.id==='fin'))}
+  const s=tsec[k];trail.classList.toggle('light',!!s&&(s.classList.contains('dark')||s.classList.contains('story')||s.classList.contains('sets')||s.id==='fin'))}
 addEventListener('scroll',upTrail,{passive:true});
 upTrail();
 </script>
